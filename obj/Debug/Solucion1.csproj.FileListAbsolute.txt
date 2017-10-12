@@ -2,8 +2,8 @@ C:\DA1\Obligatorio1\Solucion1\Solucion1\bin\Debug\Solucion1.exe.config
 C:\DA1\Obligatorio1\Solucion1\Solucion1\bin\Debug\Solucion1.exe
 C:\DA1\Obligatorio1\Solucion1\Solucion1\bin\Debug\Solucion1.pdb
 C:\DA1\Obligatorio1\Solucion1\Solucion1\obj\Debug\Solucion1.csprojResolveAssemblyReference.cache
-C:\DA1\Obligatorio1\Solucion1\Solucion1\obj\Debug\Solucion1.Form1.resources
 C:\DA1\Obligatorio1\Solucion1\Solucion1\obj\Debug\Solucion1.Properties.Resources.resources
 C:\DA1\Obligatorio1\Solucion1\Solucion1\obj\Debug\Solucion1.csproj.GenerateResource.Cache
 C:\DA1\Obligatorio1\Solucion1\Solucion1\obj\Debug\Solucion1.exe
 C:\DA1\Obligatorio1\Solucion1\Solucion1\obj\Debug\Solucion1.pdb
+C:\DA1\Obligatorio1\Solucion1\Solucion1\obj\Debug\Solucion1.ERP.resources
