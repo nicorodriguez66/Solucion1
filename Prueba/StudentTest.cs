@@ -68,7 +68,10 @@ namespace Prueba
             string NewName = "NewName";
             string NewSurname = "NewSurName";
             int NewNumber = 123;
-            string NewString = NewName + " " + NewSurname + " " + NewNumber; ;
+            student.EditStudentName(NewName);
+            student.EditStudentSurname(NewSurname);
+            student.EditStudentNumber(NewNumber);
+            string NewString = NewName + " " + NewSurname + " " + NewNumber;
             Assert.AreEqual(NewString, student.ToString());
         }
 

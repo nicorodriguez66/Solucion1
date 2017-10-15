@@ -81,6 +81,9 @@ namespace Dominio
         {
             return y;
         }
-
+        public override string ToString()
+        {
+            return name+ " " + surname + " " + number;
+        }
     }
 }
