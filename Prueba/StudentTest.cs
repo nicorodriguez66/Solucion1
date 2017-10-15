@@ -50,5 +50,20 @@ namespace Prueba
             Assert.AreEqual(NewidCard, student.GetidCard());
         }
 
+
+        [TestMethod]
+        public void StudentXYTest()
+        {
+            Student student = new Student();
+            float newX = 1,1;
+            float newY = 1,2;
+            student.EditStudentXY(newX,newY);
+            Assert.AreEqual(newX, student.GetX());
+            Assert.AreEqual(newY, student.GetY());
+        }
+
+
+
+
     }
 }
