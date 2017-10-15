@@ -55,5 +55,15 @@ namespace Dominio
         {
             return number;
         }
+
+        public void EditStudentidCard(int newidCard)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetidCard()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
