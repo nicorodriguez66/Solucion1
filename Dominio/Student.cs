@@ -48,12 +48,12 @@ namespace Dominio
 
         public void EditStudentNumber(int newNumber)
         {
-            throw new NotImplementedException();
+            number=newNumber;
         }
 
         public int GetNumber()
         {
-            throw new NotImplementedException();
+            return number;
         }
     }
 }
