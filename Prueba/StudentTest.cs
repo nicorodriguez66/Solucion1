@@ -61,7 +61,16 @@ namespace Prueba
             Assert.AreEqual(newX, student.GetX());
             Assert.AreEqual(newY, student.GetY());
         }
-
+        [TestMethod]
+        public void StudentToStringTest()
+        {
+            Student student = new Student();
+            string NewName = "NewName";
+            string NewSurname = "NewSurName";
+            int NewNumber = 123;
+            string NewString = NewName + " " + NewSurname + " " + NewNumber; ;
+            Assert.AreEqual(NewString, student.ToString());
+        }
 
 
 
