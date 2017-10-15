@@ -38,12 +38,12 @@ namespace Dominio
 
         public void EditStudentSurname(string newSurname)
         {
-            throw new NotImplementedException();
+            surname = newSurname;
         }
 
         public string GetSurname()
         {
-            throw new NotImplementedException();
+            return surname;
         }
     }
 }
