@@ -20,7 +20,7 @@ namespace Prueba
             Student student = new Student();
             string NewName = "NewName";
             student.EditStudentName(NewName);
-            Assert.AreNotEqual(NewName, student.GetName());
+            Assert.AreEqual(NewName, student.GetName());
         }
 
     }
