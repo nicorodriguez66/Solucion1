@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class subject
+    public class Subject
     {
         private string name { get; set; }
         private string code { get; set; }
         private List<Student> students;
         private List<Teacher> teachers;
-        public subject()
+        public Subject()
         {
             students = null;
             teachers = null;
