@@ -58,12 +58,12 @@ namespace Dominio
 
         public void EditStudentidCard(int newidCard)
         {
-            throw new NotImplementedException();
+            idcard=newidCard;
         }
 
         public int GetidCard()
         {
-            throw new NotImplementedException();
+            return idcard;
         }
     }
 }
