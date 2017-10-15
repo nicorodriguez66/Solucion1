@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Dominio
+{
+    public class Student:person
+    {
+
+        public int number { set; get; }
+        public int idcard { set; get; }
+        private float x { set; get; }
+        private float y { set; get; }
+        //private List<payment> payments { set; get; }
+        public Student()
+        {
+            name = "";
+            surname = "";
+            //subjects = null;
+            number = 0;
+            idcard = 0;
+            x = 0;
+            y = 0;
+            //payments = null;
+        }
+    }
+}
