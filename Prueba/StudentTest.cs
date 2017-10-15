@@ -10,6 +10,7 @@ namespace Prueba
         public void StudentBuilderTest()
         {
             Student student = new Student();
+            Assert.AreNotEqual(student, null);
         }
     }
 }
