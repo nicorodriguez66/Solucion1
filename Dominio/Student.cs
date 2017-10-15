@@ -22,7 +22,6 @@ namespace Dominio
             idcard = 0;
             x = 0;
             y = 0;
-        
         }
 
         public string GetName()

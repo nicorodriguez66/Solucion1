@@ -18,6 +18,7 @@ namespace Dominio
             allteachers = new List<Teacher>();
             allsubjects = new List<Subject>();
             allstudents = new List<Student>();
+            allvans = new List<Van>();
         }
         public List<Teacher> showallteachers()
         {
@@ -35,6 +36,15 @@ namespace Dominio
         {
             return allvans;
         }
-
+        public Student searchStudent(int Number)
+        {
+            Student found=null;
+            foreach (Student element in allstudents)
+            {
+                if (element.GetNumber().Equals(Number))
+                    found = element;
+            }
+            return found;
+        }
     }
 }
