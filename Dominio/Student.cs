@@ -35,5 +35,15 @@ namespace Dominio
         {
             name=newName;
         }
+
+        public void EditStudentSurname(string newSurname)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetSurname()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

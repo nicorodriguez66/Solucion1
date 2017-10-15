@@ -27,9 +27,9 @@ namespace Prueba
         public void StudentSurnameTest()
         {
             Student student = new Student();
-            string NewSurname = "NewName";
+            string NewSurname = "NewSurame";
             student.EditStudentSurname(NewSurname);
-            Assert.AreEqual(NewName, student.GetSurname());
+            Assert.AreEqual(NewSurname, student.GetSurname());
         }
     }
 }
