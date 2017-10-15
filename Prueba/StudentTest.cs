@@ -31,5 +31,16 @@ namespace Prueba
             student.EditStudentSurname(NewSurname);
             Assert.AreEqual(NewSurname, student.GetSurname());
         }
+
+        [TestMethod]
+        public void StudentNumberTest()
+        {
+            Student student = new Student();
+            int NewNumber = 123;
+            student.EditStudentNumber(NewNumber);
+            Assert.AreEqual(NewNumber, student.GetNumber());
+        }
+
+
     }
 }
