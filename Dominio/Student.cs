@@ -13,17 +13,16 @@ namespace Dominio
         private int idcard { set; get; }
         private float x { set; get; }
         private float y { set; get; }
-        //private List<payment> payments { set; get; }
+        
         public Student()
         {
             name = "";
-            surname = "";
-            //subjects = null;
+            surname = "";            
             number = 0;
             idcard = 0;
             x = 0;
             y = 0;
-            //payments = null;
+        
         }
 
         public string GetName()
