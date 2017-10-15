@@ -55,8 +55,8 @@ namespace Prueba
         public void StudentXYTest()
         {
             Student student = new Student();
-            float newX = 1,1;
-            float newY = 1,2;
+            float newX = 1;
+            float newY = 2;
             student.EditStudentXY(newX,newY);
             Assert.AreEqual(newX, student.GetX());
             Assert.AreEqual(newY, student.GetY());

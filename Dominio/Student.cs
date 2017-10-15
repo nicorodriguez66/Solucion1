@@ -68,17 +68,18 @@ namespace Dominio
 
         public void EditStudentXY(float newX, float newY)
         {
-            throw new NotImplementedException();
+            x=newX;
+            y = newY;
         }
 
         public float GetX()
         {
-            throw new NotImplementedException();
+            return x;
         }
 
         public float GetY()
         {
-            throw new NotImplementedException();
+            return y;
         }
     }
 }
