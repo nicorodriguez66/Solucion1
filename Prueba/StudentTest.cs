@@ -23,5 +23,13 @@ namespace Prueba
             Assert.AreEqual(NewName, student.GetName());
         }
 
+        [TestMethod]
+        public void StudentSurnameTest()
+        {
+            Student student = new Student();
+            string NewSurname = "NewName";
+            student.EditStudentSurname(NewSurname);
+            Assert.AreEqual(NewName, student.GetSurname());
+        }
     }
 }
