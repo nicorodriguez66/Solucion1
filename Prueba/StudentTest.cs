@@ -12,5 +12,16 @@ namespace Prueba
             Student student = new Student();
             Assert.AreNotEqual(student, null);
         }
+
+
+        [TestMethod]
+        public void StudentNameTest()
+        {
+            Student student = new Student();
+            string NewName = "NewName";
+            student.EditStudentName(NewName);
+            Assert.AreNotEqual(NewName, student.GetName());
+        }
+
     }
 }

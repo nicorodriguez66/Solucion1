@@ -9,8 +9,8 @@ namespace Dominio
     public class Student:person
     {
 
-        public int number { set; get; }
-        public int idcard { set; get; }
+        private int number { set; get; }
+        private int idcard { set; get; }
         private float x { set; get; }
         private float y { set; get; }
         //private List<payment> payments { set; get; }
@@ -24,6 +24,16 @@ namespace Dominio
             x = 0;
             y = 0;
             //payments = null;
+        }
+
+        public string GetName()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void EditStudentName(string newName)
+        {
+            throw new NotImplementedException();
         }
     }
 }
