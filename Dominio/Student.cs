@@ -45,5 +45,15 @@ namespace Dominio
         {
             return surname;
         }
+
+        public void EditStudentNumber(int newNumber)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetNumber()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
