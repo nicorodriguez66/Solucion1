@@ -65,5 +65,20 @@ namespace Dominio
         {
             return idcard;
         }
+
+        public void EditStudentXY(float newX, float newY)
+        {
+            throw new NotImplementedException();
+        }
+
+        public float GetX()
+        {
+            throw new NotImplementedException();
+        }
+
+        public float GetY()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
