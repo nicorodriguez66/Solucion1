@@ -41,6 +41,14 @@ namespace Prueba
             Assert.AreEqual(NewNumber, student.GetNumber());
         }
 
+        [TestMethod]
+        public void StudentidCardTest()
+        {
+            Student student = new Student();
+            int NewidCard = 123;
+            student.EditStudentidCard(NewidCard);
+            Assert.AreEqual(NewidCard, student.GetidCard());
+        }
 
     }
 }
