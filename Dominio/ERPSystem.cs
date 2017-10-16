@@ -71,7 +71,10 @@ namespace Dominio
         {
             if (allstudents.Contains(StudentToDelete))
             {
-                //StudentToDelete.ClearData();
+                foreach(Subject element in StudentToDelete.GetSubjects())
+                {
+                    searchSubject(element.GetCode()).GetStudents().Remove(StudentToDelete);
+                }
                 allstudents.Remove(StudentToDelete);
             }
         }
@@ -79,7 +82,10 @@ namespace Dominio
         {
             if (allteachers.Contains(TeacherToDelete))
             {
-                //TeacherToDelete.ClearData();
+                foreach(Subject element in TeacherToDelete.GetSubjects())
+                {
+                    searchSubject(element.GetCode()).GetTeachers().Remove(TeacherToDelete);
+                }
                 allteachers.Remove(TeacherToDelete);
             }
         }

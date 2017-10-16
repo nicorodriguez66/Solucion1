@@ -83,6 +83,8 @@ namespace Solucion1
             {
                 TeacherListBox.Items.Add(element.ToString());
             }
+            SubjectEnrolledStudentsListBox.Items.Clear();
+            SubjectEnrolledTeachersListBox.Items.Clear();
         }
 
         private void BtnStudents_Click(object sender, EventArgs e)
@@ -434,14 +436,12 @@ namespace Solucion1
             mysystem.showallteachers().Add(t2);
             mysystem.showallteachers().Add(t3);
             mysystem.showallteachers().Add(t4);
-            Subject sub1 = new Subject(); sub1.EditSubjectCode("sub1"); sub1.EditSubjectName("subject1"); sub1.SubjectAddStudent(s1); sub1.SubjectAddTeacher(t1);
-            Subject sub2 = new Subject(); sub2.EditSubjectCode("sub2"); sub2.EditSubjectName("subject2"); sub2.SubjectAddStudent(s2); sub2.SubjectAddTeacher(t2);
-            Subject sub3 = new Subject(); sub3.EditSubjectCode("sub3"); sub3.EditSubjectName("subject3"); sub3.SubjectAddStudent(s3); sub3.SubjectAddTeacher(t3);
+            Subject sub1 = new Subject(); sub1.EditSubjectCode("sub1"); sub1.EditSubjectName("subject1"); sub1.SubjectAddStudent(s1); s1.GetSubjects().Add(sub1); sub1.SubjectAddTeacher(t1); t1.GetSubjects().Add(sub1);
+            Subject sub2 = new Subject(); sub2.EditSubjectCode("sub2"); sub2.EditSubjectName("subject2"); sub2.SubjectAddStudent(s2); s2.GetSubjects().Add(sub2); sub2.SubjectAddTeacher(t2); t2.GetSubjects().Add(sub2);
+            Subject sub3 = new Subject(); sub3.EditSubjectCode("sub3"); sub3.EditSubjectName("subject3"); sub3.SubjectAddStudent(s3); s3.GetSubjects().Add(sub3); sub3.SubjectAddTeacher(t3); t3.GetSubjects().Add(sub3);
             mysystem.showallsubjects().Add(sub1);
             mysystem.showallsubjects().Add(sub2);
             mysystem.showallsubjects().Add(sub3);
-            s3.GetSubjects().Add(sub1);
-            s3.GetSubjects().Add(sub3);
             hideallgrouboxes();
             refreshdata();
 
@@ -584,6 +584,24 @@ namespace Solucion1
             foreach (Subject element in searchedStudent.GetSubjects())
             {
                 StudentSubjectsList.Items.Add(element.ToString());
+            }
+        }
+
+        private void SubjectListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            string myString = SubjectListBox.SelectedItem.ToString();
+            string[] subStrings = myString.Split(' ');
+            searchedSubject = mysystem.searchSubject(subStrings[0]);
+            SubjectEnrolledStudentsListBox.Items.Clear();
+            foreach (Student element in searchedSubject.GetStudents())
+            {
+                SubjectEnrolledStudentsListBox.Items.Add(element.ToString());
+            }
+            SubjectEnrolledTeachersListBox.Items.Clear();
+            foreach(Teacher element in searchedSubject.GetTeachers())
+            {
+                SubjectEnrolledTeachersListBox.Items.Add(element.ToString());
             }
         }
     }
