@@ -15,6 +15,7 @@ namespace Solucion1
         private ERPsystem mysystem;
         private Student searchedStudent;
         private Subject searchedSubject;
+        private Teacher searchedTeacher;
         Point DefaultPanelLocation;
         public ERP()
         {
@@ -47,8 +48,11 @@ namespace Solucion1
             btnSubjectSearchModify1.Hide();
             btnDeleteSubject.Hide();
             button29.Hide();
-
-
+            btnCreateTeacher.Hide();
+            btnTeacherDelete1.Hide();
+            btnTeacherModify1.Hide();
+            textBox8.Hide();
+            TeacherSubjectsListBox.Hide();
 
         }
 
@@ -467,6 +471,106 @@ namespace Solucion1
                     btnSubjectSearchModify.Show();
                 }
             }
+        }
+
+        private void btnTeacherModify_Click(object sender, EventArgs e)
+        {
+            hideallgrouboxes();
+            TeacherCreateGroupBox.Visible = true;
+            TeacherCreateGroupBox.Location = DefaultPanelLocation;
+            btnTeacherSearchModify.Show();
+            btnTeacherSearchDelete.Hide();
+            TeacherCreateGroupBox.Text = "Modificar Docente";
+            
+        }
+
+        private void btnTeacherDelete_Click(object sender, EventArgs e)
+        {
+            hideallgrouboxes();
+            TeacherCreateGroupBox.Visible = true;
+            TeacherCreateGroupBox.Location = DefaultPanelLocation;
+            btnTeacherSearchModify.Hide();
+            btnTeacherSearchDelete.Show();
+            TeacherCreateGroupBox.Text = "Baja Docente";
+
+        }
+
+        private void btnTeacherDelete1_Click(object sender, EventArgs e)
+        {
+            if (searchedTeacher != null)
+            {
+                mysystem.DeleteTeacher(searchedTeacher);
+                searchedStudent = null;
+
+            }
+            else
+            {
+
+            }
+            hideallgrouboxes();
+        }
+
+        private void btnTeacherSearchModify_Click(object sender, EventArgs e)
+        {
+            if (textBox7.Text != "")
+            {
+                searchedTeacher = mysystem.searchTeacher(textBox7.Text);
+                if (searchedTeacher == null)
+                {
+                    MessageBox.Show("No existe Docente");
+                }
+                else
+                {
+                    textBox8.Show(); textBox8.Text = searchedTeacher.GetName();
+
+                    TeacherSubjectsListBox.Items.Clear();
+                    foreach (Subject element in searchedTeacher.GetSubjects())
+                    {
+                        TeacherSubjectsListBox.Items.Add(element.ToString());
+                    }
+                    btnTeacherSearchModify.Hide();
+                    btnTeacherModify1.Show();
+                }
+            }
+        }
+
+        private void btnTeacherSearchDelete_Click(object sender, EventArgs e)
+        {
+            if (textBox7.Text != "")
+            {
+                searchedTeacher = mysystem.searchTeacher(textBox7.Text);
+                if (searchedTeacher == null)
+                {
+                    MessageBox.Show("No existe Docente");
+                }
+                else
+                {
+                    textBox8.Show(); textBox8.Text = searchedTeacher.GetName();
+
+                    TeacherSubjectsListBox.Items.Clear();
+                    foreach (Subject element in searchedTeacher.GetSubjects())
+                    {
+                        TeacherSubjectsListBox.Items.Add(element.ToString());
+                    }
+                    btnTeacherSearchDelete.Hide();
+                    btnTeacherDelete1.Show();
+                }
+            }
+        }
+
+        private void btnTeacherModify1_Click(object sender, EventArgs e)
+        {
+            if (searchedTeacher != null)
+
+            {
+                searchedTeacher.EditTeacherName(textBox8.Text);
+                searchedTeacher.EditTeacherSurname(textBox7.Text);
+            }
+            else
+            {
+
+            }
+            hideallgrouboxes();
         }
     }
 }

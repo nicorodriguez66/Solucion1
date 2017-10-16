@@ -57,7 +57,16 @@ namespace Dominio
             return found;
         }
 
-
+        public Teacher searchTeacher(string surname)
+        {
+            Teacher found = null;
+            foreach (Teacher element in allteachers)
+            {
+                if (element.GetSurname().Equals(surname))
+                    found = element;
+            }
+            return found;
+        }
         public void DeleteStudent(Student StudentToDelete)
         {
             if (allstudents.Contains(StudentToDelete))

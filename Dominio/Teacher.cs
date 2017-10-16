@@ -31,5 +31,19 @@ namespace Dominio
         {
             return name + " " + surname;
         }
+
+        public string GetSurname()
+        {
+            return surname;
+        }
+        public string GetName()
+        {
+            return name;
+        }
+
+        public List<Subject> GetSubjects()
+        {
+            return subjects;
+        }
     }
 }
