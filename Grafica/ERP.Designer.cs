@@ -142,6 +142,7 @@
             this.btnTeacherSearchModify = new System.Windows.Forms.Button();
             this.btnTeacherModify1 = new System.Windows.Forms.Button();
             this.btnTeacherDelete1 = new System.Windows.Forms.Button();
+            this.StudentSubjectsList = new System.Windows.Forms.ListBox();
             this.ModulesGroupBox.SuspendLayout();
             this.StudentGroupBox.SuspendLayout();
             this.SubjectGroupBox.SuspendLayout();
@@ -762,10 +763,11 @@
             // 
             // StudentListGroupBox
             // 
+            this.StudentListGroupBox.Controls.Add(this.StudentSubjectsList);
             this.StudentListGroupBox.Controls.Add(this.StudentListBox);
             this.StudentListGroupBox.Location = new System.Drawing.Point(581, 188);
             this.StudentListGroupBox.Name = "StudentListGroupBox";
-            this.StudentListGroupBox.Size = new System.Drawing.Size(205, 170);
+            this.StudentListGroupBox.Size = new System.Drawing.Size(216, 170);
             this.StudentListGroupBox.TabIndex = 26;
             this.StudentListGroupBox.TabStop = false;
             this.StudentListGroupBox.Text = "Listar Alumnos";
@@ -775,8 +777,9 @@
             this.StudentListBox.FormattingEnabled = true;
             this.StudentListBox.Location = new System.Drawing.Point(11, 21);
             this.StudentListBox.Name = "StudentListBox";
-            this.StudentListBox.Size = new System.Drawing.Size(175, 134);
+            this.StudentListBox.Size = new System.Drawing.Size(94, 134);
             this.StudentListBox.TabIndex = 0;
+            this.StudentListBox.SelectedIndexChanged += new System.EventHandler(this.StudentListBox_SelectedIndexChanged);
             // 
             // TeacherCreateGroupBox
             // 
@@ -1274,16 +1277,24 @@
             this.btnTeacherDelete1.UseVisualStyleBackColor = true;
             this.btnTeacherDelete1.Click += new System.EventHandler(this.btnTeacherDelete1_Click);
             // 
+            // StudentSubjectsList
+            // 
+            this.StudentSubjectsList.FormattingEnabled = true;
+            this.StudentSubjectsList.Location = new System.Drawing.Point(111, 21);
+            this.StudentSubjectsList.Name = "StudentSubjectsList";
+            this.StudentSubjectsList.Size = new System.Drawing.Size(94, 134);
+            this.StudentSubjectsList.TabIndex = 1;
+            // 
             // ERP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 363);
+            this.Controls.Add(this.StudentListGroupBox);
             this.Controls.Add(this.TeacherCreateGroupBox);
             this.Controls.Add(this.SubjectCreateGroupBox);
             this.Controls.Add(this.btnLoadData);
             this.Controls.Add(this.TeacherListGroupBox);
-            this.Controls.Add(this.StudentListGroupBox);
             this.Controls.Add(this.SubjectListGroupBox);
             this.Controls.Add(this.button27);
             this.Controls.Add(this.StudentModifyGroupBox);
@@ -1441,5 +1452,6 @@
         private System.Windows.Forms.Button btnTeacherModify1;
         private System.Windows.Forms.Button btnTeacherSearchModify;
         private System.Windows.Forms.Button btnTeacherSearchDelete;
+        private System.Windows.Forms.ListBox StudentSubjectsList;
     }
 }

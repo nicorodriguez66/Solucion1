@@ -22,8 +22,12 @@ namespace Dominio
             idcard = 0;
             x = 0;
             y = 0;
+            subjects = new List<Subject>();
         }
-
+        public List<Subject> GetSubjects()
+        {
+            return subjects;
+        }
         public string GetName()
         {
             return name;

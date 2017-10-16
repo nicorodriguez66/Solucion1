@@ -440,6 +440,8 @@ namespace Solucion1
             mysystem.showallsubjects().Add(sub1);
             mysystem.showallsubjects().Add(sub2);
             mysystem.showallsubjects().Add(sub3);
+            s3.GetSubjects().Add(sub1);
+            s3.GetSubjects().Add(sub3);
             hideallgrouboxes();
             refreshdata();
 
@@ -571,6 +573,18 @@ namespace Solucion1
 
             }
             hideallgrouboxes();
+        }
+
+        private void StudentListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string myString = StudentListBox.SelectedItem.ToString();
+            string[] subStrings = myString.Split(' ');
+            searchedStudent = mysystem.searchStudent(Int32.Parse(subStrings[2]));
+            StudentSubjectsList.Items.Clear();
+            foreach (Subject element in searchedStudent.GetSubjects())
+            {
+                StudentSubjectsList.Items.Add(element.ToString());
+            }
         }
     }
 }
