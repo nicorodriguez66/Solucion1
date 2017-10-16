@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class ERPSystem
+    public class ERPsystem
     {
         private List<Teacher> allteachers;
         private List<Student> allstudents;
         private List<Subject> allsubjects;
         private List<Van> allvans;
 
-        public ERPSystem()
+        public ERPsystem()
         {
             allteachers = new List<Teacher>();
             allsubjects = new List<Subject>();
@@ -36,6 +36,15 @@ namespace Dominio
         {
             return allvans;
         }
-
+        public Student searchStudent(int Number)
+        {
+            Student found = null;
+            foreach (Student element in allstudents)
+            {
+                if (element.GetNumber().Equals(Number))
+                    found = element;
+            }
+            return found;
+        }
     }
 }
