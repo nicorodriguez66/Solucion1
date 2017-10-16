@@ -136,7 +136,7 @@
             this.SubjectListBox = new System.Windows.Forms.ListBox();
             this.TeacherListGroupBox = new System.Windows.Forms.GroupBox();
             this.TeacherListBox = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLoadData = new System.Windows.Forms.Button();
             this.ModulesGroupBox.SuspendLayout();
             this.StudentGroupBox.SuspendLayout();
             this.SubjectGroupBox.SuspendLayout();
@@ -1202,21 +1202,22 @@
             this.TeacherListBox.Size = new System.Drawing.Size(175, 134);
             this.TeacherListBox.TabIndex = 0;
             // 
-            // button1
+            // btnLoadData
             // 
-            this.button1.Location = new System.Drawing.Point(18, 328);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Cargar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLoadData.Location = new System.Drawing.Point(18, 328);
+            this.btnLoadData.Name = "btnLoadData";
+            this.btnLoadData.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadData.TabIndex = 30;
+            this.btnLoadData.Text = "Cargar";
+            this.btnLoadData.UseVisualStyleBackColor = true;
+            this.btnLoadData.Click += new System.EventHandler(this.btnLoadData_Click);
             // 
             // ERP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 363);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLoadData);
             this.Controls.Add(this.TeacherListGroupBox);
             this.Controls.Add(this.StudentListGroupBox);
             this.Controls.Add(this.TeacherCreateGroupBox);
@@ -1372,6 +1373,6 @@
         private System.Windows.Forms.ListBox TeacherSubjectsListBox;
         private System.Windows.Forms.GroupBox TeacherListGroupBox;
         private System.Windows.Forms.ListBox TeacherListBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLoadData;
     }
 }

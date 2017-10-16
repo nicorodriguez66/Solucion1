@@ -408,6 +408,27 @@ namespace Solucion1
             refreshdata();
         }
 
-        
+        private void btnLoadData_Click(object sender, EventArgs e)
+        {
+            Student s1 = new Student(); s1.EditStudentName("s1"); s1.EditStudentSurname("s1"); s1.EditStudentNumber(1); s1.EditStudentidCard(1);
+            Student s2 = new Student(); s2.EditStudentName("s2"); s2.EditStudentSurname("s2"); s2.EditStudentNumber(2); s2.EditStudentidCard(2);
+            Student s3 = new Student(); s3.EditStudentName("s3"); s3.EditStudentSurname("s3"); s3.EditStudentNumber(3); s3.EditStudentidCard(3);
+            Student s4 = new Student(); s4.EditStudentName("s4"); s4.EditStudentSurname("s4"); s4.EditStudentNumber(4); s4.EditStudentidCard(4);
+            mysystem.showallstudents().Add(s1);
+            mysystem.showallstudents().Add(s2);
+            mysystem.showallstudents().Add(s3);
+            mysystem.showallstudents().Add(s4);
+            Teacher t1 = new Teacher(); t1.EditTeacherName("T1"); t1.EditTeacherSurname("T1");
+            Teacher t2 = new Teacher(); t2.EditTeacherName("T2"); t2.EditTeacherSurname("T2");
+            Teacher t3 = new Teacher(); t3.EditTeacherName("T3"); t3.EditTeacherSurname("T3");
+            Teacher t4 = new Teacher(); t4.EditTeacherName("T4"); t4.EditTeacherSurname("T4");
+            mysystem.showallteachers().Add(t1);
+            mysystem.showallteachers().Add(t2);
+            mysystem.showallteachers().Add(t3);
+            mysystem.showallteachers().Add(t4);
+            Subject sub1 = new Subject(); sub1.EditSubjectCode("sub1"); sub1.EditSubjectName("subject1"); sub1.SubjectAddStudent(s1); sub1.SubjectAddTeacher(t1);
+            Subject sub2 = new Subject(); sub2.EditSubjectCode("sub2"); sub2.EditSubjectName("subject2"); sub2.SubjectAddStudent(s2); sub2.SubjectAddTeacher(t2);
+            Subject sub3 = new Subject(); sub3.EditSubjectCode("sub3"); sub3.EditSubjectName("subject3"); sub3.SubjectAddStudent(s3); sub3.SubjectAddTeacher(t3);
+        }
     }
 }
