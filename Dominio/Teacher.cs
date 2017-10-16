@@ -12,15 +12,24 @@ namespace Dominio
         {
             name = "";
             surname = "";
-            //subjects = null;
+            subjects = new List<Subject>();
         }
-        public void EditTeacher()
+        public void EditTeacherName(string NewName)
         {
-
+            name = NewName;
+        }
+        public void EditTeacherSurname(string NewSurname)
+        {
+            surname = NewSurname;
         }
         public void DeleteTeacher()
         {
+
             //subjects.Clear();
+        }
+        public override string ToString()
+        {
+            return name + " " + surname;
         }
     }
 }

@@ -10,6 +10,6 @@ namespace Dominio
     {
         protected string name;
         protected string surname;
-        //protected List<subject> subjects;
+        protected List<Subject> subjects;
     }
 }
