@@ -1,1 +1,8 @@
 C:\DA1\Obligatorio1\Solucion1\Prueba\obj\Debug\Prueba.csprojResolveAssemblyReference.cache
+C:\DA1\Obligatorio1\Solucion1\Grafica\Prueba\bin\Debug\Prueba.dll
+C:\DA1\Obligatorio1\Solucion1\Grafica\Prueba\bin\Debug\Prueba.pdb
+C:\DA1\Obligatorio1\Solucion1\Grafica\Prueba\bin\Debug\Dominio.dll
+C:\DA1\Obligatorio1\Solucion1\Grafica\Prueba\bin\Debug\Dominio.pdb
+C:\DA1\Obligatorio1\Solucion1\Grafica\Prueba\obj\Debug\Prueba.csprojResolveAssemblyReference.cache
+C:\DA1\Obligatorio1\Solucion1\Grafica\Prueba\obj\Debug\Prueba.dll
+C:\DA1\Obligatorio1\Solucion1\Grafica\Prueba\obj\Debug\Prueba.pdb
