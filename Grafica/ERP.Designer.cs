@@ -147,6 +147,8 @@
             this.SubjectEnrolledTeachersListBox = new System.Windows.Forms.ListBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
+            this.TeacherSubjectslistBox1 = new System.Windows.Forms.ListBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.ModulesGroupBox.SuspendLayout();
             this.StudentGroupBox.SuspendLayout();
             this.SubjectGroupBox.SuspendLayout();
@@ -1220,6 +1222,8 @@
             // 
             // TeacherListGroupBox
             // 
+            this.TeacherListGroupBox.Controls.Add(this.label26);
+            this.TeacherListGroupBox.Controls.Add(this.TeacherSubjectslistBox1);
             this.TeacherListGroupBox.Controls.Add(this.TeacherListBox);
             this.TeacherListGroupBox.Location = new System.Drawing.Point(855, 12);
             this.TeacherListGroupBox.Name = "TeacherListGroupBox";
@@ -1231,10 +1235,11 @@
             // TeacherListBox
             // 
             this.TeacherListBox.FormattingEnabled = true;
-            this.TeacherListBox.Location = new System.Drawing.Point(11, 21);
+            this.TeacherListBox.Location = new System.Drawing.Point(11, 29);
             this.TeacherListBox.Name = "TeacherListBox";
-            this.TeacherListBox.Size = new System.Drawing.Size(175, 134);
+            this.TeacherListBox.Size = new System.Drawing.Size(91, 121);
             this.TeacherListBox.TabIndex = 0;
+            this.TeacherListBox.SelectedIndexChanged += new System.EventHandler(this.TeacherListBox_SelectedIndexChanged);
             // 
             // btnLoadData
             // 
@@ -1328,6 +1333,23 @@
             this.label25.TabIndex = 4;
             this.label25.Text = "Docentes";
             // 
+            // TeacherSubjectslistBox1
+            // 
+            this.TeacherSubjectslistBox1.FormattingEnabled = true;
+            this.TeacherSubjectslistBox1.Location = new System.Drawing.Point(108, 29);
+            this.TeacherSubjectslistBox1.Name = "TeacherSubjectslistBox1";
+            this.TeacherSubjectslistBox1.Size = new System.Drawing.Size(91, 121);
+            this.TeacherSubjectslistBox1.TabIndex = 1;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(108, 16);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(47, 13);
+            this.label26.TabIndex = 5;
+            this.label26.Text = "Materias";
+            // 
             // ERP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1376,6 +1398,7 @@
             this.SubjectListGroupBox.ResumeLayout(false);
             this.SubjectListGroupBox.PerformLayout();
             this.TeacherListGroupBox.ResumeLayout(false);
+            this.TeacherListGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1501,5 +1524,7 @@
         private System.Windows.Forms.ListBox SubjectEnrolledTeachersListBox;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ListBox TeacherSubjectslistBox1;
+        private System.Windows.Forms.Label label26;
     }
 }

@@ -604,5 +604,18 @@ namespace Solucion1
                 SubjectEnrolledTeachersListBox.Items.Add(element.ToString());
             }
         }
+
+        private void TeacherListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            string myString = TeacherListBox.SelectedItem.ToString();
+            string[] subStrings = myString.Split(' ');
+            searchedTeacher= mysystem.searchTeacher(subStrings[1]);
+            TeacherSubjectslistBox1.Items.Clear();
+            foreach (Subject element in searchedTeacher.GetSubjects())
+            {
+                TeacherSubjectslistBox1.Items.Add(element.ToString());
+            }
+        }
     }
 }
