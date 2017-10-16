@@ -52,8 +52,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentTest.cs" />
+=======
+    <Compile Include="StudentTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+>>>>>>> f106a7e5ac171116453753bd5ef0f916f2bfde51
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dominio\Dominio.csproj">

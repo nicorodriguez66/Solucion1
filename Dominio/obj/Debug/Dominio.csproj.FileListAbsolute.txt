@@ -1,5 +1,17 @@
+<<<<<<< HEAD
 C:\DA1\Obligatorio1\Solucion1\Grafica\Dominio\bin\Debug\Dominio.dll
 C:\DA1\Obligatorio1\Solucion1\Grafica\Dominio\bin\Debug\Dominio.pdb
 C:\DA1\Obligatorio1\Solucion1\Grafica\Dominio\obj\Debug\Dominio.dll
 C:\DA1\Obligatorio1\Solucion1\Grafica\Dominio\obj\Debug\Dominio.pdb
 C:\DA1\Obligatorio1\Solucion1\Grafica\Dominio\obj\Debug\Dominio.csprojResolveAssemblyReference.cache
+=======
+C:\DA1\Obligatorio1\Solucion1\Dominio\bin\Debug\Dominio.dll
+C:\DA1\Obligatorio1\Solucion1\Dominio\bin\Debug\Dominio.pdb
+C:\DA1\Obligatorio1\Solucion1\Dominio\obj\Debug\Dominio.csprojResolveAssemblyReference.cache
+C:\DA1\Obligatorio1\Solucion1\Dominio\obj\Debug\Dominio.dll
+C:\DA1\Obligatorio1\Solucion1\Dominio\obj\Debug\Dominio.pdb
+C:\DA1\Obligatorio1\Solucion1\Grafica\Dominio\obj\Debug\Dominio.dll
+C:\DA1\Obligatorio1\Solucion1\Grafica\Dominio\obj\Debug\Dominio.pdb
+C:\DA1\Obligatorio1\Solucion1\Grafica\Dominio\bin\Debug\Dominio.dll
+C:\DA1\Obligatorio1\Solucion1\Grafica\Dominio\bin\Debug\Dominio.pdb
+>>>>>>> f106a7e5ac171116453753bd5ef0f916f2bfde51

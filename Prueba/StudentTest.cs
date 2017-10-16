@@ -57,7 +57,11 @@ namespace Prueba
             Student student = new Student();
             float newX = 1;
             float newY = 2;
+<<<<<<< HEAD
             student.EditStudentXY(newX, newY);
+=======
+            student.EditStudentXY(newX,newY);
+>>>>>>> f106a7e5ac171116453753bd5ef0f916f2bfde51
             Assert.AreEqual(newX, student.GetX());
             Assert.AreEqual(newY, student.GetY());
         }
@@ -74,6 +78,12 @@ namespace Prueba
             string NewString = NewName + " " + NewSurname + " " + NewNumber;
             Assert.AreEqual(NewString, student.ToString());
         }
+<<<<<<< HEAD
         
+=======
+
+
+
+>>>>>>> f106a7e5ac171116453753bd5ef0f916f2bfde51
     }
 }
