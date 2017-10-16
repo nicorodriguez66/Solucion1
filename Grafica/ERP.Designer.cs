@@ -51,10 +51,10 @@
             this.btnTeacherList = new System.Windows.Forms.Button();
             this.btnTeacherDelete = new System.Windows.Forms.Button();
             this.VanGroupBox = new System.Windows.Forms.GroupBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.btnCreateVan = new System.Windows.Forms.Button();
+            this.btnVanUpdate = new System.Windows.Forms.Button();
+            this.btnAvailableVans = new System.Windows.Forms.Button();
+            this.btnVanDelete = new System.Windows.Forms.Button();
             this.ActivityGroupBox = new System.Windows.Forms.GroupBox();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
@@ -89,8 +89,13 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.btnStudentSearchModify = new System.Windows.Forms.Button();
             this.StudentListGroupBox = new System.Windows.Forms.GroupBox();
+            this.StudentSubjectsList = new System.Windows.Forms.ListBox();
             this.StudentListBox = new System.Windows.Forms.ListBox();
             this.TeacherCreateGroupBox = new System.Windows.Forms.GroupBox();
+            this.btnTeacherDelete1 = new System.Windows.Forms.Button();
+            this.btnTeacherModify1 = new System.Windows.Forms.Button();
+            this.btnTeacherSearchModify = new System.Windows.Forms.Button();
+            this.btnTeacherSearchDelete = new System.Windows.Forms.Button();
             this.TeacherSubjectsListBox = new System.Windows.Forms.ListBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -113,15 +118,17 @@
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.btnCreateNewSubject = new System.Windows.Forms.Button();
             this.VanCreateGroupBox = new System.Windows.Forms.GroupBox();
+            this.btnVanDelete1 = new System.Windows.Forms.Button();
+            this.btnVanModify1 = new System.Windows.Forms.Button();
+            this.btnVanSearchDelete = new System.Windows.Forms.Button();
+            this.btnVanSearchModify = new System.Windows.Forms.Button();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
-            this.button24 = new System.Windows.Forms.Button();
+            this.btnVanCreate = new System.Windows.Forms.Button();
             this.ActivityCreateGroupBox = new System.Windows.Forms.GroupBox();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -134,21 +141,20 @@
             this.button25 = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
             this.SubjectListGroupBox = new System.Windows.Forms.GroupBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.SubjectEnrolledTeachersListBox = new System.Windows.Forms.ListBox();
+            this.SubjectEnrolledStudentsListBox = new System.Windows.Forms.ListBox();
             this.SubjectListBox = new System.Windows.Forms.ListBox();
             this.TeacherListGroupBox = new System.Windows.Forms.GroupBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.TeacherSubjectslistBox1 = new System.Windows.Forms.ListBox();
             this.TeacherListBox = new System.Windows.Forms.ListBox();
             this.btnLoadData = new System.Windows.Forms.Button();
-            this.btnTeacherSearchDelete = new System.Windows.Forms.Button();
-            this.btnTeacherSearchModify = new System.Windows.Forms.Button();
-            this.btnTeacherModify1 = new System.Windows.Forms.Button();
-            this.btnTeacherDelete1 = new System.Windows.Forms.Button();
-            this.StudentSubjectsList = new System.Windows.Forms.ListBox();
-            this.SubjectEnrolledStudentsListBox = new System.Windows.Forms.ListBox();
-            this.SubjectEnrolledTeachersListBox = new System.Windows.Forms.ListBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.TeacherSubjectslistBox1 = new System.Windows.Forms.ListBox();
-            this.label26 = new System.Windows.Forms.Label();
+            this.VanList = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.VanAvailableListBox1 = new System.Windows.Forms.ListBox();
+            this.VanAvailableCheckBox = new System.Windows.Forms.CheckBox();
             this.ModulesGroupBox.SuspendLayout();
             this.StudentGroupBox.SuspendLayout();
             this.SubjectGroupBox.SuspendLayout();
@@ -165,6 +171,7 @@
             this.ActivityCreateGroupBox.SuspendLayout();
             this.SubjectListGroupBox.SuspendLayout();
             this.TeacherListGroupBox.SuspendLayout();
+            this.VanList.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPayments
@@ -403,10 +410,10 @@
             // 
             // VanGroupBox
             // 
-            this.VanGroupBox.Controls.Add(this.button9);
-            this.VanGroupBox.Controls.Add(this.button10);
-            this.VanGroupBox.Controls.Add(this.button11);
-            this.VanGroupBox.Controls.Add(this.button12);
+            this.VanGroupBox.Controls.Add(this.btnCreateVan);
+            this.VanGroupBox.Controls.Add(this.btnVanUpdate);
+            this.VanGroupBox.Controls.Add(this.btnAvailableVans);
+            this.VanGroupBox.Controls.Add(this.btnVanDelete);
             this.VanGroupBox.Location = new System.Drawing.Point(191, 100);
             this.VanGroupBox.Name = "VanGroupBox";
             this.VanGroupBox.Size = new System.Drawing.Size(173, 82);
@@ -414,42 +421,45 @@
             this.VanGroupBox.TabStop = false;
             this.VanGroupBox.Text = "Camionetas";
             // 
-            // button9
+            // btnCreateVan
             // 
-            this.button9.Location = new System.Drawing.Point(6, 19);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 12;
-            this.button9.Text = "Alta";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.btnCreateVan.Location = new System.Drawing.Point(6, 19);
+            this.btnCreateVan.Name = "btnCreateVan";
+            this.btnCreateVan.Size = new System.Drawing.Size(75, 23);
+            this.btnCreateVan.TabIndex = 12;
+            this.btnCreateVan.Text = "Alta";
+            this.btnCreateVan.UseVisualStyleBackColor = true;
+            this.btnCreateVan.Click += new System.EventHandler(this.button9_Click);
             // 
-            // button10
+            // btnVanUpdate
             // 
-            this.button10.Location = new System.Drawing.Point(6, 48);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 14;
-            this.button10.Text = "Modificar";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnVanUpdate.Location = new System.Drawing.Point(6, 48);
+            this.btnVanUpdate.Name = "btnVanUpdate";
+            this.btnVanUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnVanUpdate.TabIndex = 14;
+            this.btnVanUpdate.Text = "Modificar";
+            this.btnVanUpdate.UseVisualStyleBackColor = true;
+            this.btnVanUpdate.Click += new System.EventHandler(this.btnVanUpdate_Click);
             // 
-            // button11
+            // btnAvailableVans
             // 
-            this.button11.Location = new System.Drawing.Point(87, 48);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 15;
-            this.button11.Text = "Listar";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnAvailableVans.Location = new System.Drawing.Point(87, 48);
+            this.btnAvailableVans.Name = "btnAvailableVans";
+            this.btnAvailableVans.Size = new System.Drawing.Size(75, 23);
+            this.btnAvailableVans.TabIndex = 15;
+            this.btnAvailableVans.Text = "Disponibles";
+            this.btnAvailableVans.UseVisualStyleBackColor = true;
+            this.btnAvailableVans.Click += new System.EventHandler(this.btnAvailableVans_Click);
             // 
-            // button12
+            // btnVanDelete
             // 
-            this.button12.Location = new System.Drawing.Point(87, 19);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 13;
-            this.button12.Text = "Baja";
-            this.button12.UseVisualStyleBackColor = true;
+            this.btnVanDelete.Location = new System.Drawing.Point(87, 19);
+            this.btnVanDelete.Name = "btnVanDelete";
+            this.btnVanDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnVanDelete.TabIndex = 13;
+            this.btnVanDelete.Text = "Baja";
+            this.btnVanDelete.UseVisualStyleBackColor = true;
+            this.btnVanDelete.Click += new System.EventHandler(this.btnVanDelete_Click);
             // 
             // ActivityGroupBox
             // 
@@ -665,7 +675,7 @@
             // 
             // button29
             // 
-            this.button29.Location = new System.Drawing.Point(119, 135);
+            this.button29.Location = new System.Drawing.Point(119, 119);
             this.button29.Name = "button29";
             this.button29.Size = new System.Drawing.Size(75, 23);
             this.button29.TabIndex = 27;
@@ -771,12 +781,20 @@
             // 
             this.StudentListGroupBox.Controls.Add(this.StudentSubjectsList);
             this.StudentListGroupBox.Controls.Add(this.StudentListBox);
-            this.StudentListGroupBox.Location = new System.Drawing.Point(581, 188);
+            this.StudentListGroupBox.Location = new System.Drawing.Point(0, 147);
             this.StudentListGroupBox.Name = "StudentListGroupBox";
             this.StudentListGroupBox.Size = new System.Drawing.Size(216, 170);
             this.StudentListGroupBox.TabIndex = 26;
             this.StudentListGroupBox.TabStop = false;
             this.StudentListGroupBox.Text = "Listar Alumnos";
+            // 
+            // StudentSubjectsList
+            // 
+            this.StudentSubjectsList.FormattingEnabled = true;
+            this.StudentSubjectsList.Location = new System.Drawing.Point(111, 21);
+            this.StudentSubjectsList.Name = "StudentSubjectsList";
+            this.StudentSubjectsList.Size = new System.Drawing.Size(94, 134);
+            this.StudentSubjectsList.TabIndex = 1;
             // 
             // StudentListBox
             // 
@@ -806,6 +824,46 @@
             this.TeacherCreateGroupBox.TabIndex = 25;
             this.TeacherCreateGroupBox.TabStop = false;
             this.TeacherCreateGroupBox.Text = "Alta Docente";
+            // 
+            // btnTeacherDelete1
+            // 
+            this.btnTeacherDelete1.Location = new System.Drawing.Point(111, 124);
+            this.btnTeacherDelete1.Name = "btnTeacherDelete1";
+            this.btnTeacherDelete1.Size = new System.Drawing.Size(75, 23);
+            this.btnTeacherDelete1.TabIndex = 29;
+            this.btnTeacherDelete1.Text = "Borrar";
+            this.btnTeacherDelete1.UseVisualStyleBackColor = true;
+            this.btnTeacherDelete1.Click += new System.EventHandler(this.btnTeacherDelete1_Click);
+            // 
+            // btnTeacherModify1
+            // 
+            this.btnTeacherModify1.Location = new System.Drawing.Point(111, 140);
+            this.btnTeacherModify1.Name = "btnTeacherModify1";
+            this.btnTeacherModify1.Size = new System.Drawing.Size(75, 23);
+            this.btnTeacherModify1.TabIndex = 28;
+            this.btnTeacherModify1.Text = "Modificar";
+            this.btnTeacherModify1.UseVisualStyleBackColor = true;
+            this.btnTeacherModify1.Click += new System.EventHandler(this.btnTeacherModify1_Click);
+            // 
+            // btnTeacherSearchModify
+            // 
+            this.btnTeacherSearchModify.Location = new System.Drawing.Point(64, 124);
+            this.btnTeacherSearchModify.Name = "btnTeacherSearchModify";
+            this.btnTeacherSearchModify.Size = new System.Drawing.Size(75, 23);
+            this.btnTeacherSearchModify.TabIndex = 27;
+            this.btnTeacherSearchModify.Text = "Buscar";
+            this.btnTeacherSearchModify.UseVisualStyleBackColor = true;
+            this.btnTeacherSearchModify.Click += new System.EventHandler(this.btnTeacherSearchModify_Click);
+            // 
+            // btnTeacherSearchDelete
+            // 
+            this.btnTeacherSearchDelete.Location = new System.Drawing.Point(65, 141);
+            this.btnTeacherSearchDelete.Name = "btnTeacherSearchDelete";
+            this.btnTeacherSearchDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnTeacherSearchDelete.TabIndex = 26;
+            this.btnTeacherSearchDelete.Text = "Buscar";
+            this.btnTeacherSearchDelete.UseVisualStyleBackColor = true;
+            this.btnTeacherSearchDelete.Click += new System.EventHandler(this.btnTeacherSearchDelete_Click);
             // 
             // TeacherSubjectsListBox
             // 
@@ -1007,15 +1065,19 @@
             // 
             // VanCreateGroupBox
             // 
+            this.VanCreateGroupBox.Controls.Add(this.VanAvailableCheckBox);
+            this.VanCreateGroupBox.Controls.Add(this.btnVanDelete1);
+            this.VanCreateGroupBox.Controls.Add(this.btnVanModify1);
+            this.VanCreateGroupBox.Controls.Add(this.StudentListGroupBox);
+            this.VanCreateGroupBox.Controls.Add(this.btnVanSearchDelete);
+            this.VanCreateGroupBox.Controls.Add(this.btnVanSearchModify);
             this.VanCreateGroupBox.Controls.Add(this.textBox13);
             this.VanCreateGroupBox.Controls.Add(this.label17);
             this.VanCreateGroupBox.Controls.Add(this.label18);
-            this.VanCreateGroupBox.Controls.Add(this.label19);
             this.VanCreateGroupBox.Controls.Add(this.label20);
             this.VanCreateGroupBox.Controls.Add(this.textBox14);
-            this.VanCreateGroupBox.Controls.Add(this.textBox15);
             this.VanCreateGroupBox.Controls.Add(this.textBox16);
-            this.VanCreateGroupBox.Controls.Add(this.button24);
+            this.VanCreateGroupBox.Controls.Add(this.btnVanCreate);
             this.VanCreateGroupBox.Location = new System.Drawing.Point(581, 41);
             this.VanCreateGroupBox.Name = "VanCreateGroupBox";
             this.VanCreateGroupBox.Size = new System.Drawing.Size(205, 170);
@@ -1023,9 +1085,49 @@
             this.VanCreateGroupBox.TabStop = false;
             this.VanCreateGroupBox.Text = "Alta Camioneta";
             // 
+            // btnVanDelete1
+            // 
+            this.btnVanDelete1.Location = new System.Drawing.Point(111, 108);
+            this.btnVanDelete1.Name = "btnVanDelete1";
+            this.btnVanDelete1.Size = new System.Drawing.Size(75, 23);
+            this.btnVanDelete1.TabIndex = 28;
+            this.btnVanDelete1.Text = "Borrar";
+            this.btnVanDelete1.UseVisualStyleBackColor = true;
+            this.btnVanDelete1.Click += new System.EventHandler(this.btnVanDelete1_Click);
+            // 
+            // btnVanModify1
+            // 
+            this.btnVanModify1.Location = new System.Drawing.Point(111, 118);
+            this.btnVanModify1.Name = "btnVanModify1";
+            this.btnVanModify1.Size = new System.Drawing.Size(75, 23);
+            this.btnVanModify1.TabIndex = 27;
+            this.btnVanModify1.Text = "Modificar";
+            this.btnVanModify1.UseVisualStyleBackColor = true;
+            this.btnVanModify1.Click += new System.EventHandler(this.btnVanModify1_Click);
+            // 
+            // btnVanSearchDelete
+            // 
+            this.btnVanSearchDelete.Location = new System.Drawing.Point(78, 108);
+            this.btnVanSearchDelete.Name = "btnVanSearchDelete";
+            this.btnVanSearchDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnVanSearchDelete.TabIndex = 26;
+            this.btnVanSearchDelete.Text = "Buscar";
+            this.btnVanSearchDelete.UseVisualStyleBackColor = true;
+            this.btnVanSearchDelete.Click += new System.EventHandler(this.btnVanSearchDelete_Click);
+            // 
+            // btnVanSearchModify
+            // 
+            this.btnVanSearchModify.Location = new System.Drawing.Point(78, 118);
+            this.btnVanSearchModify.Name = "btnVanSearchModify";
+            this.btnVanSearchModify.Size = new System.Drawing.Size(75, 23);
+            this.btnVanSearchModify.TabIndex = 25;
+            this.btnVanSearchModify.Text = "Buscar";
+            this.btnVanSearchModify.UseVisualStyleBackColor = true;
+            this.btnVanSearchModify.Click += new System.EventHandler(this.btnVanSearchModify_Click);
+            // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(64, 111);
+            this.textBox13.Location = new System.Drawing.Point(64, 85);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(130, 20);
             this.textBox13.TabIndex = 23;
@@ -1033,34 +1135,25 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 114);
+            this.label17.Location = new System.Drawing.Point(6, 92);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(38, 13);
+            this.label17.Size = new System.Drawing.Size(35, 13);
             this.label17.TabIndex = 22;
-            this.label17.Text = "IdCard";
+            this.label17.Text = "IdVan";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(6, 88);
+            this.label18.Location = new System.Drawing.Point(6, 66);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(44, 13);
+            this.label18.Size = new System.Drawing.Size(48, 13);
             this.label18.TabIndex = 21;
-            this.label18.Text = "Number";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(6, 62);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(49, 13);
-            this.label19.TabIndex = 20;
-            this.label19.Text = "Surname";
+            this.label18.Text = "Capacity";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(6, 36);
+            this.label20.Location = new System.Drawing.Point(6, 40);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(35, 13);
             this.label20.TabIndex = 19;
@@ -1068,17 +1161,10 @@
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(64, 85);
+            this.textBox14.Location = new System.Drawing.Point(64, 59);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(130, 20);
             this.textBox14.TabIndex = 18;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(64, 59);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(130, 20);
-            this.textBox15.TabIndex = 17;
             // 
             // textBox16
             // 
@@ -1087,14 +1173,15 @@
             this.textBox16.Size = new System.Drawing.Size(130, 20);
             this.textBox16.TabIndex = 16;
             // 
-            // button24
+            // btnVanCreate
             // 
-            this.button24.Location = new System.Drawing.Point(64, 141);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(75, 23);
-            this.button24.TabIndex = 24;
-            this.button24.Text = "Crear";
-            this.button24.UseVisualStyleBackColor = true;
+            this.btnVanCreate.Location = new System.Drawing.Point(78, 141);
+            this.btnVanCreate.Name = "btnVanCreate";
+            this.btnVanCreate.Size = new System.Drawing.Size(75, 23);
+            this.btnVanCreate.TabIndex = 24;
+            this.btnVanCreate.Text = "Crear";
+            this.btnVanCreate.UseVisualStyleBackColor = true;
+            this.btnVanCreate.Click += new System.EventHandler(this.btnVanCreate_Click);
             // 
             // ActivityCreateGroupBox
             // 
@@ -1211,6 +1298,40 @@
             this.SubjectListGroupBox.TabStop = false;
             this.SubjectListGroupBox.Text = "Listar Materias";
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(181, 12);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(53, 13);
+            this.label25.TabIndex = 4;
+            this.label25.Text = "Docentes";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(96, 12);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(47, 13);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Alumnos";
+            // 
+            // SubjectEnrolledTeachersListBox
+            // 
+            this.SubjectEnrolledTeachersListBox.FormattingEnabled = true;
+            this.SubjectEnrolledTeachersListBox.Location = new System.Drawing.Point(181, 21);
+            this.SubjectEnrolledTeachersListBox.Name = "SubjectEnrolledTeachersListBox";
+            this.SubjectEnrolledTeachersListBox.Size = new System.Drawing.Size(79, 134);
+            this.SubjectEnrolledTeachersListBox.TabIndex = 2;
+            // 
+            // SubjectEnrolledStudentsListBox
+            // 
+            this.SubjectEnrolledStudentsListBox.FormattingEnabled = true;
+            this.SubjectEnrolledStudentsListBox.Location = new System.Drawing.Point(96, 21);
+            this.SubjectEnrolledStudentsListBox.Name = "SubjectEnrolledStudentsListBox";
+            this.SubjectEnrolledStudentsListBox.Size = new System.Drawing.Size(79, 134);
+            this.SubjectEnrolledStudentsListBox.TabIndex = 1;
+            // 
             // SubjectListBox
             // 
             this.SubjectListBox.FormattingEnabled = true;
@@ -1232,6 +1353,23 @@
             this.TeacherListGroupBox.TabStop = false;
             this.TeacherListGroupBox.Text = "Listar Docentes";
             // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(108, 16);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(47, 13);
+            this.label26.TabIndex = 5;
+            this.label26.Text = "Materias";
+            // 
+            // TeacherSubjectslistBox1
+            // 
+            this.TeacherSubjectslistBox1.FormattingEnabled = true;
+            this.TeacherSubjectslistBox1.Location = new System.Drawing.Point(108, 29);
+            this.TeacherSubjectslistBox1.Name = "TeacherSubjectslistBox1";
+            this.TeacherSubjectslistBox1.Size = new System.Drawing.Size(91, 121);
+            this.TeacherSubjectslistBox1.TabIndex = 1;
+            // 
             // TeacherListBox
             // 
             this.TeacherListBox.FormattingEnabled = true;
@@ -1251,112 +1389,52 @@
             this.btnLoadData.UseVisualStyleBackColor = true;
             this.btnLoadData.Click += new System.EventHandler(this.btnLoadData_Click);
             // 
-            // btnTeacherSearchDelete
+            // VanList
             // 
-            this.btnTeacherSearchDelete.Location = new System.Drawing.Point(65, 141);
-            this.btnTeacherSearchDelete.Name = "btnTeacherSearchDelete";
-            this.btnTeacherSearchDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnTeacherSearchDelete.TabIndex = 26;
-            this.btnTeacherSearchDelete.Text = "Buscar";
-            this.btnTeacherSearchDelete.UseVisualStyleBackColor = true;
-            this.btnTeacherSearchDelete.Click += new System.EventHandler(this.btnTeacherSearchDelete_Click);
+            this.VanList.Controls.Add(this.label19);
+            this.VanList.Controls.Add(this.VanAvailableListBox1);
+            this.VanList.Location = new System.Drawing.Point(814, 31);
+            this.VanList.Name = "VanList";
+            this.VanList.Size = new System.Drawing.Size(160, 170);
+            this.VanList.TabIndex = 30;
+            this.VanList.TabStop = false;
+            this.VanList.Text = "Listar Camionetas";
             // 
-            // btnTeacherSearchModify
+            // label19
             // 
-            this.btnTeacherSearchModify.Location = new System.Drawing.Point(64, 124);
-            this.btnTeacherSearchModify.Name = "btnTeacherSearchModify";
-            this.btnTeacherSearchModify.Size = new System.Drawing.Size(75, 23);
-            this.btnTeacherSearchModify.TabIndex = 27;
-            this.btnTeacherSearchModify.Text = "Buscar";
-            this.btnTeacherSearchModify.UseVisualStyleBackColor = true;
-            this.btnTeacherSearchModify.Click += new System.EventHandler(this.btnTeacherSearchModify_Click);
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(8, 17);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(61, 13);
+            this.label19.TabIndex = 5;
+            this.label19.Text = "Disponibles";
             // 
-            // btnTeacherModify1
+            // VanAvailableListBox1
             // 
-            this.btnTeacherModify1.Location = new System.Drawing.Point(111, 140);
-            this.btnTeacherModify1.Name = "btnTeacherModify1";
-            this.btnTeacherModify1.Size = new System.Drawing.Size(75, 23);
-            this.btnTeacherModify1.TabIndex = 28;
-            this.btnTeacherModify1.Text = "Modificar";
-            this.btnTeacherModify1.UseVisualStyleBackColor = true;
-            this.btnTeacherModify1.Click += new System.EventHandler(this.btnTeacherModify1_Click);
+            this.VanAvailableListBox1.FormattingEnabled = true;
+            this.VanAvailableListBox1.Location = new System.Drawing.Point(11, 29);
+            this.VanAvailableListBox1.Name = "VanAvailableListBox1";
+            this.VanAvailableListBox1.Size = new System.Drawing.Size(132, 121);
+            this.VanAvailableListBox1.TabIndex = 0;
             // 
-            // btnTeacherDelete1
+            // VanAvailableCheckBox
             // 
-            this.btnTeacherDelete1.Location = new System.Drawing.Point(111, 124);
-            this.btnTeacherDelete1.Name = "btnTeacherDelete1";
-            this.btnTeacherDelete1.Size = new System.Drawing.Size(75, 23);
-            this.btnTeacherDelete1.TabIndex = 29;
-            this.btnTeacherDelete1.Text = "Borrar";
-            this.btnTeacherDelete1.UseVisualStyleBackColor = true;
-            this.btnTeacherDelete1.Click += new System.EventHandler(this.btnTeacherDelete1_Click);
-            // 
-            // StudentSubjectsList
-            // 
-            this.StudentSubjectsList.FormattingEnabled = true;
-            this.StudentSubjectsList.Location = new System.Drawing.Point(111, 21);
-            this.StudentSubjectsList.Name = "StudentSubjectsList";
-            this.StudentSubjectsList.Size = new System.Drawing.Size(94, 134);
-            this.StudentSubjectsList.TabIndex = 1;
-            // 
-            // SubjectEnrolledStudentsListBox
-            // 
-            this.SubjectEnrolledStudentsListBox.FormattingEnabled = true;
-            this.SubjectEnrolledStudentsListBox.Location = new System.Drawing.Point(96, 21);
-            this.SubjectEnrolledStudentsListBox.Name = "SubjectEnrolledStudentsListBox";
-            this.SubjectEnrolledStudentsListBox.Size = new System.Drawing.Size(79, 134);
-            this.SubjectEnrolledStudentsListBox.TabIndex = 1;
-            // 
-            // SubjectEnrolledTeachersListBox
-            // 
-            this.SubjectEnrolledTeachersListBox.FormattingEnabled = true;
-            this.SubjectEnrolledTeachersListBox.Location = new System.Drawing.Point(181, 21);
-            this.SubjectEnrolledTeachersListBox.Name = "SubjectEnrolledTeachersListBox";
-            this.SubjectEnrolledTeachersListBox.Size = new System.Drawing.Size(79, 134);
-            this.SubjectEnrolledTeachersListBox.TabIndex = 2;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(96, 12);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 13);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Alumnos";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(181, 12);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(53, 13);
-            this.label25.TabIndex = 4;
-            this.label25.Text = "Docentes";
-            // 
-            // TeacherSubjectslistBox1
-            // 
-            this.TeacherSubjectslistBox1.FormattingEnabled = true;
-            this.TeacherSubjectslistBox1.Location = new System.Drawing.Point(108, 29);
-            this.TeacherSubjectslistBox1.Name = "TeacherSubjectslistBox1";
-            this.TeacherSubjectslistBox1.Size = new System.Drawing.Size(91, 121);
-            this.TeacherSubjectslistBox1.TabIndex = 1;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(108, 16);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(47, 13);
-            this.label26.TabIndex = 5;
-            this.label26.Text = "Materias";
+            this.VanAvailableCheckBox.AutoSize = true;
+            this.VanAvailableCheckBox.Location = new System.Drawing.Point(9, 115);
+            this.VanAvailableCheckBox.Name = "VanAvailableCheckBox";
+            this.VanAvailableCheckBox.Size = new System.Drawing.Size(69, 17);
+            this.VanAvailableCheckBox.TabIndex = 30;
+            this.VanAvailableCheckBox.Text = "Available";
+            this.VanAvailableCheckBox.UseVisualStyleBackColor = true;
             // 
             // ERP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1096, 363);
+            this.Controls.Add(this.VanCreateGroupBox);
+            this.Controls.Add(this.VanList);
             this.Controls.Add(this.SubjectListGroupBox);
-            this.Controls.Add(this.StudentListGroupBox);
             this.Controls.Add(this.TeacherCreateGroupBox);
             this.Controls.Add(this.SubjectCreateGroupBox);
             this.Controls.Add(this.btnLoadData);
@@ -1364,7 +1442,6 @@
             this.Controls.Add(this.button27);
             this.Controls.Add(this.StudentModifyGroupBox);
             this.Controls.Add(this.ActivityCreateGroupBox);
-            this.Controls.Add(this.VanCreateGroupBox);
             this.Controls.Add(this.StudentCreatGroupBox);
             this.Controls.Add(this.VanGroupBox);
             this.Controls.Add(this.TeacherGroupBox);
@@ -1399,6 +1476,8 @@
             this.SubjectListGroupBox.PerformLayout();
             this.TeacherListGroupBox.ResumeLayout(false);
             this.TeacherListGroupBox.PerformLayout();
+            this.VanList.ResumeLayout(false);
+            this.VanList.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1424,10 +1503,10 @@
         private System.Windows.Forms.Button btnSubjectDelete;
         private System.Windows.Forms.GroupBox TeacherGroupBox;
         private System.Windows.Forms.GroupBox VanGroupBox;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button btnCreateVan;
+        private System.Windows.Forms.Button btnVanUpdate;
+        private System.Windows.Forms.Button btnAvailableVans;
+        private System.Windows.Forms.Button btnVanDelete;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnTeacherModify;
         private System.Windows.Forms.Button btnTeacherList;
@@ -1483,12 +1562,10 @@
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Button btnVanCreate;
         private System.Windows.Forms.GroupBox ActivityCreateGroupBox;
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.Label label21;
@@ -1526,5 +1603,13 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ListBox TeacherSubjectslistBox1;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button btnVanDelete1;
+        private System.Windows.Forms.Button btnVanModify1;
+        private System.Windows.Forms.Button btnVanSearchDelete;
+        private System.Windows.Forms.Button btnVanSearchModify;
+        private System.Windows.Forms.GroupBox VanList;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ListBox VanAvailableListBox1;
+        private System.Windows.Forms.CheckBox VanAvailableCheckBox;
     }
 }

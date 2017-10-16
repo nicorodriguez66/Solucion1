@@ -16,6 +16,7 @@ namespace Solucion1
         private Student searchedStudent;
         private Subject searchedSubject;
         private Teacher searchedTeacher;
+        private Van searchedVan;
         Point DefaultPanelLocation;
         public ERP()
         {
@@ -53,7 +54,13 @@ namespace Solucion1
             btnTeacherModify1.Hide();
             textBox8.Hide();
             TeacherSubjectsListBox.Hide();
-
+            btnVanCreate.Hide();
+            btnVanModify1.Hide();
+            btnVanDelete1.Hide();
+            btnVanSearchDelete.Hide();
+            btnVanSearchModify.Hide();
+            VanList.Hide();
+            VanAvailableCheckBox.Hide();
         }
 
         public void refreshdata()
@@ -85,6 +92,12 @@ namespace Solucion1
             }
             SubjectEnrolledStudentsListBox.Items.Clear();
             SubjectEnrolledTeachersListBox.Items.Clear();
+
+            VanAvailableListBox1.Items.Clear();
+            foreach (Van element in mysystem.showAvailableVans())
+            {
+                VanAvailableListBox1.Items.Add(element.ToString());
+            }
         }
 
         private void BtnStudents_Click(object sender, EventArgs e)
@@ -184,6 +197,11 @@ namespace Solucion1
             hideallgrouboxes();
             VanCreateGroupBox.Visible = true;
             VanCreateGroupBox.Location = DefaultPanelLocation;
+            VanCreateGroupBox.Text = "Alta Camioneta";
+            textBox14.Show(); textBox14.Text = "";
+            textBox16.Show(); textBox16.Text = "";
+            VanAvailableCheckBox.Show();
+            btnVanCreate.Show();
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -371,7 +389,6 @@ namespace Solucion1
 
         private void btnSubjectModify_Click(object sender, EventArgs e)
         {
-
             hideallgrouboxes();
             SubjectCreateGroupBox.Visible = true;
             SubjectCreateGroupBox.Location = DefaultPanelLocation;
@@ -616,6 +633,118 @@ namespace Solucion1
             {
                 TeacherSubjectslistBox1.Items.Add(element.ToString());
             }
+        }
+
+        private void btnVanCreate_Click(object sender, EventArgs e)
+        {
+            Van createdVan = new Van();
+            createdVan.EditVanCapacity(Int32.Parse(textBox14.Text)); textBox14.Text = "";
+            createdVan.EditVanId(Int32.Parse(textBox13.Text)); textBox13.Text = "";
+            createdVan.EditVanName(textBox16.Text); textBox16.Text = "";
+            createdVan.EditVanAvailability(VanAvailableCheckBox.Checked);
+            mysystem.showallvans().Add(createdVan);
+            hideallgrouboxes();
+        }
+
+        private void btnVanUpdate_Click(object sender, EventArgs e)
+        {
+            hideallgrouboxes();
+            VanCreateGroupBox.Visible = true;
+            VanCreateGroupBox.Location = DefaultPanelLocation;
+
+            textBox16.Hide();
+            textBox14.Hide();
+            btnVanSearchModify.Show();
+            
+            VanCreateGroupBox.Text = "Modificar Camioneta";
+        }
+
+        private void btnVanSearchModify_Click(object sender, EventArgs e)
+        {
+            if (textBox13.Text != "")
+            {
+                searchedVan = mysystem.searchVan(Int32.Parse(textBox13.Text));
+                if (searchedVan == null)
+                {
+                    MessageBox.Show("No existe camioneta");
+                }
+                else
+                {
+                    textBox14.Show(); textBox14.Text = searchedVan.GetCapacity().ToString();
+                    textBox16.Show(); textBox16.Text = searchedVan.GetName();
+                    btnVanModify1.Show();
+                    btnVanSearchModify.Hide();
+                }
+            }
+        }
+
+        private void btnVanSearchDelete_Click(object sender, EventArgs e)
+        {
+            if (textBox13.Text != "")
+            {
+                searchedVan = mysystem.searchVan(Int32.Parse(textBox13.Text));
+                if (searchedVan == null)
+                {
+                    MessageBox.Show("No existe camioneta");
+                }
+                else
+                {
+                    textBox14.Show(); textBox14.Text = searchedVan.GetCapacity().ToString();
+                    textBox16.Show(); textBox16.Text = searchedVan.GetName();
+                    btnVanDelete1.Show();
+                    btnVanSearchDelete.Hide();
+                }
+            }
+        }
+
+        private void btnVanModify1_Click(object sender, EventArgs e)
+        {
+            if (searchedVan != null)
+            {
+                searchedVan.EditVanCapacity(Int32.Parse(textBox14.Text)); textBox14.Text = "";
+                searchedVan.EditVanId(Int32.Parse(textBox13.Text)); textBox13.Text = "";
+                searchedVan.EditVanName(textBox16.Text); textBox16.Text = "";
+            }
+            else
+            {
+
+            }
+            hideallgrouboxes();
+        }
+
+        private void btnVanDelete1_Click(object sender, EventArgs e)
+        {
+            if (searchedVan != null)
+            {
+                mysystem.DeleteVan(searchedVan);
+                searchedVan = null;
+            }
+            else
+            {
+
+            }
+            hideallgrouboxes();
+        }
+
+        private void btnVanDelete_Click(object sender, EventArgs e)
+        {
+            hideallgrouboxes();
+            VanCreateGroupBox.Visible = true;
+            VanCreateGroupBox.Location = DefaultPanelLocation;
+
+            textBox16.Hide();
+            textBox14.Hide();
+            btnVanSearchDelete.Show();
+
+            VanCreateGroupBox.Text = "Baja Camioneta";
+        }
+
+        private void btnAvailableVans_Click(object sender, EventArgs e)
+        {
+            hideallgrouboxes();
+            VanList.Visible = true;
+            VanList.Location = DefaultPanelLocation;
+            refreshdata();
         }
     }
 }

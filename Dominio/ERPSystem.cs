@@ -36,6 +36,15 @@ namespace Dominio
         {
             return allvans;
         }
+        public List<Van> showAvailableVans()
+        {
+            List<Van> Availables = new List<Van>();
+            foreach (Van element in allvans)
+                if (element.GetAvailability())
+                    Availables.Add(element);
+            Availables = Availables.OrderBy(o => o.GetCapacity()).ToList();
+            return Availables;
+        }
         public Student searchStudent(int Number)
         {
             Student found = null;
@@ -56,7 +65,6 @@ namespace Dominio
             }
             return found;
         }
-
         public Teacher searchTeacher(string surname)
         {
             Teacher found = null;
@@ -67,6 +75,18 @@ namespace Dominio
             }
             return found;
         }
+        public Van searchVan(int id)
+        {
+            Van found = null;
+            foreach (Van element in allvans)
+            {
+                if (element.GetId().Equals(id))
+                    found = element;
+            }
+            return found;
+        }
+
+
         public void DeleteStudent(Student StudentToDelete)
         {
             if (allstudents.Contains(StudentToDelete))
@@ -94,6 +114,13 @@ namespace Dominio
             if (allsubjects.Contains(SubjectToDelete))
             {
                 allsubjects.Remove(SubjectToDelete);
+            }
+        }
+        public void DeleteVan(Van VanToDelete)
+        {
+            if (allvans.Contains(VanToDelete))
+            {
+                allvans.Remove(VanToDelete);
             }
         }
     }
