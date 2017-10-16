@@ -373,7 +373,7 @@ namespace Solucion1
             SubjectStudentListBox.Hide();
             SubjectTeachersListBox.Hide();
             btnCreateNewSubject.Hide();
-            btnSubjectSearchModify.Show();//
+            btnSubjectSearchModify1.Show();//
             btnSubjectSearch.Hide();
             btnDeleteSubject.Hide();
             SubjectCreateGroupBox.Text = "Modificar Materia";
@@ -436,6 +436,8 @@ namespace Solucion1
             mysystem.showallsubjects().Add(sub1);
             mysystem.showallsubjects().Add(sub2);
             mysystem.showallsubjects().Add(sub3);
+            hideallgrouboxes();
+            refreshdata();
 
         }
 
