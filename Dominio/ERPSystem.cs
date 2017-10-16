@@ -42,7 +42,7 @@ namespace Dominio
             foreach (Van element in allvans)
                 if (element.GetAvailability())
                     Availables.Add(element);
-            Availables = Availables.OrderBy(o => o.GetCapacity()).ToList();
+            Availables = Availables.OrderByDescending(o => o.GetCapacity()).ToList();
             return Availables;
         }
         public Student searchStudent(int Number)
@@ -122,6 +122,33 @@ namespace Dominio
             {
                 allvans.Remove(VanToDelete);
             }
+        }
+        public float distance(Student student)
+        {
+            return student.GetX() + student.GetY();
+        }
+        public List<Student> routeVan(Van van)
+        {
+            List<Student> roadmap = new List<Student>();
+            if (van.GetAvailability())
+            {             
+                List<Student> closer = allstudents.OrderByDescending(o => distance(o)).ToList();
+                int actualCapacity = van.GetCapacity();
+                while (actualCapacity > 0)
+                {
+                    roadmap.Add(closer.First());
+                    closer.Remove(closer.First());
+                    actualCapacity--;
+                }
+            }
+            return roadmap;
+        }
+        public List<List<Student>> routeAllVan()
+        {
+            List<List<Student>> allroadmaps = new List<List<Student>>();
+            foreach (Van element in allvans)
+                allroadmaps.Add(routeVan(element));
+            return allroadmaps;
         }
     }
 }
