@@ -43,8 +43,8 @@
             this.SubjectGroupBox = new System.Windows.Forms.GroupBox();
             this.btnCreateSubject = new System.Windows.Forms.Button();
             this.btnSubjectModify = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnSubjectList = new System.Windows.Forms.Button();
+            this.btnSubjectDelete = new System.Windows.Forms.Button();
             this.TeacherGroupBox = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
             this.btnTeacherModify = new System.Windows.Forms.Button();
@@ -99,6 +99,7 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.btnCreateTeacher = new System.Windows.Forms.Button();
             this.SubjectCreateGroupBox = new System.Windows.Forms.GroupBox();
+            this.btnSubjectSearchModify1 = new System.Windows.Forms.Button();
             this.btnSubjectSearchModify = new System.Windows.Forms.Button();
             this.btnDeleteSubject = new System.Windows.Forms.Button();
             this.btnSubjectSearch = new System.Windows.Forms.Button();
@@ -287,8 +288,8 @@
             // 
             this.SubjectGroupBox.Controls.Add(this.btnCreateSubject);
             this.SubjectGroupBox.Controls.Add(this.btnSubjectModify);
-            this.SubjectGroupBox.Controls.Add(this.button3);
-            this.SubjectGroupBox.Controls.Add(this.button4);
+            this.SubjectGroupBox.Controls.Add(this.btnSubjectList);
+            this.SubjectGroupBox.Controls.Add(this.btnSubjectDelete);
             this.SubjectGroupBox.Location = new System.Drawing.Point(12, 129);
             this.SubjectGroupBox.Name = "SubjectGroupBox";
             this.SubjectGroupBox.Size = new System.Drawing.Size(173, 82);
@@ -316,25 +317,25 @@
             this.btnSubjectModify.UseVisualStyleBackColor = true;
             this.btnSubjectModify.Click += new System.EventHandler(this.btnSubjectModify_Click);
             // 
-            // button3
+            // btnSubjectList
             // 
-            this.button3.Location = new System.Drawing.Point(87, 48);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Listar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnSubjectList.Location = new System.Drawing.Point(87, 48);
+            this.btnSubjectList.Name = "btnSubjectList";
+            this.btnSubjectList.Size = new System.Drawing.Size(75, 23);
+            this.btnSubjectList.TabIndex = 15;
+            this.btnSubjectList.Text = "Listar";
+            this.btnSubjectList.UseVisualStyleBackColor = true;
+            this.btnSubjectList.Click += new System.EventHandler(this.btnSubjectList_Click);
             // 
-            // button4
+            // btnSubjectDelete
             // 
-            this.button4.Location = new System.Drawing.Point(87, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Baja";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnSubjectDelete.Location = new System.Drawing.Point(87, 19);
+            this.btnSubjectDelete.Name = "btnSubjectDelete";
+            this.btnSubjectDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnSubjectDelete.TabIndex = 13;
+            this.btnSubjectDelete.Text = "Baja";
+            this.btnSubjectDelete.UseVisualStyleBackColor = true;
+            this.btnSubjectDelete.Click += new System.EventHandler(this.btnSubjectDelete_Click);
             // 
             // TeacherGroupBox
             // 
@@ -651,7 +652,7 @@
             // 
             // button29
             // 
-            this.button29.Location = new System.Drawing.Point(119, 137);
+            this.button29.Location = new System.Drawing.Point(119, 135);
             this.button29.Name = "button29";
             this.button29.Size = new System.Drawing.Size(75, 23);
             this.button29.TabIndex = 27;
@@ -661,7 +662,7 @@
             // 
             // btnStudentSearch
             // 
-            this.btnStudentSearch.Location = new System.Drawing.Point(38, 137);
+            this.btnStudentSearch.Location = new System.Drawing.Point(38, 135);
             this.btnStudentSearch.Name = "btnStudentSearch";
             this.btnStudentSearch.Size = new System.Drawing.Size(75, 23);
             this.btnStudentSearch.TabIndex = 26;
@@ -848,6 +849,7 @@
             // 
             // SubjectCreateGroupBox
             // 
+            this.SubjectCreateGroupBox.Controls.Add(this.btnSubjectSearchModify1);
             this.SubjectCreateGroupBox.Controls.Add(this.btnSubjectSearchModify);
             this.SubjectCreateGroupBox.Controls.Add(this.btnDeleteSubject);
             this.SubjectCreateGroupBox.Controls.Add(this.btnSubjectSearch);
@@ -866,6 +868,16 @@
             this.SubjectCreateGroupBox.TabIndex = 25;
             this.SubjectCreateGroupBox.TabStop = false;
             this.SubjectCreateGroupBox.Text = "Alta Materia";
+            // 
+            // btnSubjectSearchModify1
+            // 
+            this.btnSubjectSearchModify1.Location = new System.Drawing.Point(64, 211);
+            this.btnSubjectSearchModify1.Name = "btnSubjectSearchModify1";
+            this.btnSubjectSearchModify1.Size = new System.Drawing.Size(75, 23);
+            this.btnSubjectSearchModify1.TabIndex = 30;
+            this.btnSubjectSearchModify1.Text = "Buscar";
+            this.btnSubjectSearchModify1.UseVisualStyleBackColor = true;
+            this.btnSubjectSearchModify1.Click += new System.EventHandler(this.btnSubjectSearchModify1_Click);
             // 
             // btnSubjectSearchModify
             // 
@@ -1217,12 +1229,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 363);
+            this.Controls.Add(this.SubjectCreateGroupBox);
             this.Controls.Add(this.btnLoadData);
             this.Controls.Add(this.TeacherListGroupBox);
             this.Controls.Add(this.StudentListGroupBox);
             this.Controls.Add(this.TeacherCreateGroupBox);
             this.Controls.Add(this.SubjectListGroupBox);
-            this.Controls.Add(this.SubjectCreateGroupBox);
             this.Controls.Add(this.button27);
             this.Controls.Add(this.StudentModifyGroupBox);
             this.Controls.Add(this.ActivityCreateGroupBox);
@@ -1280,8 +1292,8 @@
         private System.Windows.Forms.GroupBox SubjectGroupBox;
         private System.Windows.Forms.Button btnCreateSubject;
         private System.Windows.Forms.Button btnSubjectModify;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSubjectList;
+        private System.Windows.Forms.Button btnSubjectDelete;
         private System.Windows.Forms.GroupBox TeacherGroupBox;
         private System.Windows.Forms.GroupBox VanGroupBox;
         private System.Windows.Forms.Button button9;
@@ -1374,5 +1386,6 @@
         private System.Windows.Forms.GroupBox TeacherListGroupBox;
         private System.Windows.Forms.ListBox TeacherListBox;
         private System.Windows.Forms.Button btnLoadData;
+        private System.Windows.Forms.Button btnSubjectSearchModify1;
     }
 }

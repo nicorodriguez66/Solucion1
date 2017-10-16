@@ -44,8 +44,12 @@ namespace Solucion1
             TeacherListGroupBox.Visible = false;
             btnSubjectSearch.Hide();
             btnSubjectSearchModify.Hide();
+            btnSubjectSearchModify1.Hide();
             btnDeleteSubject.Hide();
             button29.Hide();
+
+
+
         }
 
         public void refreshdata()
@@ -274,7 +278,7 @@ namespace Solucion1
 
 
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnSubjectList_Click(object sender, EventArgs e)
         {
             hideallgrouboxes();
             SubjectListGroupBox.Visible = true;
@@ -293,7 +297,6 @@ namespace Solucion1
                 }
                 else
                 {
-
                     textBox12.Show(); textBox12.Text = searchedSubject.GetName();
                     SubjectStudentListBox.Items.Clear();
                     foreach (Student element in searchedSubject.GetStudents())
@@ -331,18 +334,19 @@ namespace Solucion1
             hideallgrouboxes();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnSubjectDelete_Click(object sender, EventArgs e)
         {
             hideallgrouboxes();
             SubjectCreateGroupBox.Visible = true;
             SubjectCreateGroupBox.Location = DefaultPanelLocation;
-            SubjectCreateGroupBox.Text = "Baja Materia";
             textBox12.Hide();
             SubjectStudentListBox.Hide();
             SubjectTeachersListBox.Hide();
             btnCreateNewSubject.Hide();
             btnSubjectSearch.Show();
+            btnSubjectSearchModify.Hide();//
             btnDeleteSubject.Hide();
+            SubjectCreateGroupBox.Text = "Baja Materia";
         }
 
         private void btnDeleteSubject_Click(object sender, EventArgs e)
@@ -361,19 +365,18 @@ namespace Solucion1
 
         private void btnSubjectModify_Click(object sender, EventArgs e)
         {
-            
+
             hideallgrouboxes();
             SubjectCreateGroupBox.Visible = true;
             SubjectCreateGroupBox.Location = DefaultPanelLocation;
-            SubjectCreateGroupBox.Text = "Modificar Materia";
-            /*
             textBox12.Hide();
             SubjectStudentListBox.Hide();
             SubjectTeachersListBox.Hide();
             btnCreateNewSubject.Hide();
-            btnSubjectSearch.Show();
+            btnSubjectSearchModify.Show();//
+            btnSubjectSearch.Hide();
             btnDeleteSubject.Hide();
-            */
+            SubjectCreateGroupBox.Text = "Modificar Materia";
         }
 
         private void btnSubjectSearchModify_Click(object sender, EventArgs e)
@@ -410,6 +413,7 @@ namespace Solucion1
 
         private void btnLoadData_Click(object sender, EventArgs e)
         {
+            mysystem = new ERPsystem();
             Student s1 = new Student(); s1.EditStudentName("s1"); s1.EditStudentSurname("s1"); s1.EditStudentNumber(1); s1.EditStudentidCard(1);
             Student s2 = new Student(); s2.EditStudentName("s2"); s2.EditStudentSurname("s2"); s2.EditStudentNumber(2); s2.EditStudentidCard(2);
             Student s3 = new Student(); s3.EditStudentName("s3"); s3.EditStudentSurname("s3"); s3.EditStudentNumber(3); s3.EditStudentidCard(3);
@@ -429,6 +433,38 @@ namespace Solucion1
             Subject sub1 = new Subject(); sub1.EditSubjectCode("sub1"); sub1.EditSubjectName("subject1"); sub1.SubjectAddStudent(s1); sub1.SubjectAddTeacher(t1);
             Subject sub2 = new Subject(); sub2.EditSubjectCode("sub2"); sub2.EditSubjectName("subject2"); sub2.SubjectAddStudent(s2); sub2.SubjectAddTeacher(t2);
             Subject sub3 = new Subject(); sub3.EditSubjectCode("sub3"); sub3.EditSubjectName("subject3"); sub3.SubjectAddStudent(s3); sub3.SubjectAddTeacher(t3);
+            mysystem.showallsubjects().Add(sub1);
+            mysystem.showallsubjects().Add(sub2);
+            mysystem.showallsubjects().Add(sub3);
+
+        }
+
+        private void btnSubjectSearchModify1_Click(object sender, EventArgs e)
+        {
+            if (textBox11.Text != "")
+            {
+                searchedSubject = mysystem.searchSubject(textBox11.Text);
+                if (searchedSubject == null)
+                {
+                    MessageBox.Show("No existe Materia");
+                }
+                else
+                {
+                    textBox12.Show(); textBox12.Text = searchedSubject.GetName();
+                    SubjectStudentListBox.Items.Clear();
+                    foreach (Student element in searchedSubject.GetStudents())
+                    {
+                        SubjectStudentListBox.Items.Add(element.ToString());
+                    }
+                    SubjectTeachersListBox.Items.Clear();
+                    foreach (Teacher element in searchedSubject.GetTeachers())
+                    {
+                        SubjectTeachersListBox.Items.Add(element.ToString());
+                    }
+                    btnSubjectSearchModify1.Hide();
+                    btnSubjectSearchModify.Show();
+                }
+            }
         }
     }
 }
