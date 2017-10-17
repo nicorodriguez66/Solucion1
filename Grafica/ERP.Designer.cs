@@ -176,6 +176,7 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.btnCreateNewPayment = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.roadmapListBox = new System.Windows.Forms.ListBox();
             this.ModulesGroupBox.SuspendLayout();
             this.StudentGroupBox.SuspendLayout();
             this.SubjectGroupBox.SuspendLayout();
@@ -1475,6 +1476,7 @@
             // 
             // VanList
             // 
+            this.VanList.Controls.Add(this.roadmapListBox);
             this.VanList.Controls.Add(this.label19);
             this.VanList.Controls.Add(this.VanAvailableListBox1);
             this.VanList.Location = new System.Drawing.Point(814, 31);
@@ -1496,10 +1498,11 @@
             // VanAvailableListBox1
             // 
             this.VanAvailableListBox1.FormattingEnabled = true;
-            this.VanAvailableListBox1.Location = new System.Drawing.Point(11, 29);
+            this.VanAvailableListBox1.Location = new System.Drawing.Point(18, 30);
             this.VanAvailableListBox1.Name = "VanAvailableListBox1";
-            this.VanAvailableListBox1.Size = new System.Drawing.Size(132, 121);
+            this.VanAvailableListBox1.Size = new System.Drawing.Size(61, 121);
             this.VanAvailableListBox1.TabIndex = 0;
+            this.VanAvailableListBox1.SelectedIndexChanged += new System.EventHandler(this.VanAvailableListBox1_SelectedIndexChanged);
             // 
             // ActivityStudentsGroupBox
             // 
@@ -1664,6 +1667,14 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(130, 21);
             this.comboBox1.TabIndex = 30;
+            // 
+            // roadmapListBox
+            // 
+            this.roadmapListBox.FormattingEnabled = true;
+            this.roadmapListBox.Location = new System.Drawing.Point(89, 30);
+            this.roadmapListBox.Name = "roadmapListBox";
+            this.roadmapListBox.Size = new System.Drawing.Size(61, 121);
+            this.roadmapListBox.TabIndex = 6;
             // 
             // ERP
             // 
@@ -1877,5 +1888,6 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Button btnCreateNewPayment;
+        private System.Windows.Forms.ListBox roadmapListBox;
     }
 }

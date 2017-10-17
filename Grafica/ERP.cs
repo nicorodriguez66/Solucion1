@@ -976,5 +976,17 @@ namespace Solucion1
             btnDeletePayment1.Show();
             btnDeletePayment.Hide();
         }
+
+        private void VanAvailableListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string myString = VanAvailableListBox1.SelectedItem.ToString();
+            string[] subStrings = myString.Split(' ');
+            searchedVan = mysystem.searchVan(Int32.Parse(subStrings[1]));
+            roadmapListBox.Items.Clear();
+            foreach (Student element in mysystem.routeVan(searchedVan))
+            {
+                roadmapListBox.Items.Add(element.ToString());
+            }
+        }
     }
 }
