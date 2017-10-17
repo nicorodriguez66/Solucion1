@@ -17,7 +17,8 @@ namespace Solucion1
         private Subject searchedSubject;
         private Teacher searchedTeacher;
         private Van searchedVan;
-        Point DefaultPanelLocation;
+        private Activity searchedActivity;
+        private Point DefaultPanelLocation;
         public ERP()
         {
             InitializeComponent();
@@ -61,6 +62,11 @@ namespace Solucion1
             btnVanSearchModify.Hide();
             VanList.Hide();
             VanAvailableCheckBox.Hide();
+            btnActivitySearchDelete.Hide();
+            btnActivityDelete1.Hide();
+            btnActivitySearchModify.Hide();
+            btnActivityModify1.Hide();
+            ActivityStudentsGroupBox.Hide();
         }
 
         public void refreshdata()
@@ -98,9 +104,16 @@ namespace Solucion1
             {
                 VanAvailableListBox1.Items.Add(element.ToString());
             }
-        }
+            
+            ActivityListBox.Items.Clear();
+            foreach(Activity element in mysystem.showallactivities())
+            {
+                ActivityListBox.Items.Add(element.ToString());
+            }
+    
+    }
 
-        private void BtnStudents_Click(object sender, EventArgs e)
+    private void BtnStudents_Click(object sender, EventArgs e)
         {
             hideallgrouboxes();
             StudentGroupBox.Visible = true;
@@ -204,12 +217,7 @@ namespace Solucion1
             btnVanCreate.Show();
         }
 
-        private void button13_Click(object sender, EventArgs e)
-        {
-            hideallgrouboxes();
-            ActivityCreateGroupBox.Visible = true;
-            ActivityCreateGroupBox.Location = DefaultPanelLocation;
-        }
+        
 
         private void CreateStudent_Click(object sender, EventArgs e)
         {
@@ -459,6 +467,21 @@ namespace Solucion1
             mysystem.showallsubjects().Add(sub1);
             mysystem.showallsubjects().Add(sub2);
             mysystem.showallsubjects().Add(sub3);
+            Activity a1 = new Activity(); a1.EditActivityCost(1); a1.EditActivityDate(System.DateTime.Now); a1.EditActivityId(1); a1.EditActivityName("1");
+            Activity a2 = new Activity(); a2.EditActivityCost(2); a2.EditActivityDate(System.DateTime.Now); a2.EditActivityId(2); a2.EditActivityName("2");
+            Activity a3 = new Activity(); a3.EditActivityCost(3); a3.EditActivityDate(System.DateTime.Now); a3.EditActivityId(3); a3.EditActivityName("3");
+            a1.GetStudents().Add(s1);
+            a2.GetStudents().Add(s2);
+            a3.GetStudents().Add(s3);
+            mysystem.showallactivities().Add(a1);
+            mysystem.showallactivities().Add(a2);
+            mysystem.showallactivities().Add(a3);
+            Van v1 = new Van(); v1.EditVanAvailability(true); v1.EditVanCapacity(1); v1.EditVanId(1); v1.EditVanName("1");
+            Van v2 = new Van(); v2.EditVanAvailability(true); v2.EditVanCapacity(2); v2.EditVanId(2); v2.EditVanName("2");
+            Van v3 = new Van(); v3.EditVanAvailability(true); v3.EditVanCapacity(3); v3.EditVanId(3); v3.EditVanName("3");
+            mysystem.showallvans().Add(v1);
+            mysystem.showallvans().Add(v2);
+            mysystem.showallvans().Add(v3);
             hideallgrouboxes();
             refreshdata();
 
@@ -745,6 +768,143 @@ namespace Solucion1
             VanList.Visible = true;
             VanList.Location = DefaultPanelLocation;
             refreshdata();
+        }
+
+        private void btnCreateActivity_Click(object sender, EventArgs e)
+        {
+            hideallgrouboxes();
+            ActivityCreateGroupBox.Visible = true;
+            ActivityCreateGroupBox.Location = DefaultPanelLocation;
+        }
+
+        private void btnCreateNewActivity_Click(object sender, EventArgs e)
+        {
+            Activity createdActivity = new Activity();
+            createdActivity.EditActivityName(textBox20.Text);
+            createdActivity.EditActivityId(Int32.Parse(textBox19.Text));
+            createdActivity.EditActivityDate(dateTimePicker1.Value);
+            createdActivity.EditActivityCost(Int32.Parse(textBox17.Text));
+            mysystem.showallactivities().Add(createdActivity);
+            hideallgrouboxes();
+        }
+
+        private void btnDeleteActivity_Click(object sender, EventArgs e)
+        {
+            hideallgrouboxes();
+            ActivityCreateGroupBox.Visible = true;
+            ActivityCreateGroupBox.Location = DefaultPanelLocation;
+
+            textBox20.Hide();
+            dateTimePicker1.Hide();
+            textBox17.Hide();
+            btnActivitySearchDelete.Show();
+
+            ActivityCreateGroupBox.Text = "Baja Actividad";
+        }
+
+        private void btnActivityModify1_Click(object sender, EventArgs e)
+        {
+            if (searchedActivity != null)
+            {
+
+                searchedActivity.EditActivityName(textBox20.Text);
+                searchedActivity.EditActivityId(Int32.Parse(textBox19.Text));
+                searchedActivity.EditActivityDate(dateTimePicker1.Value);
+                searchedActivity.EditActivityCost(Int32.Parse(textBox17.Text));
+            }
+            else
+            {
+
+            }
+            hideallgrouboxes();
+        }
+
+        private void btnModifyActivity_Click(object sender, EventArgs e)
+        {
+            hideallgrouboxes();
+            ActivityCreateGroupBox.Visible = true;
+            ActivityCreateGroupBox.Location = DefaultPanelLocation;
+
+            textBox20.Hide();
+            dateTimePicker1.Hide();
+            textBox17.Hide();
+            btnActivitySearchModify.Show();
+            btnCreateNewActivity.Hide();
+            
+            ActivityCreateGroupBox.Text = "Modificar Actividad";
+        }
+
+        private void btnActivitySearchDelete_Click(object sender, EventArgs e)
+        {
+            if (textBox19.Text != "")
+            {
+                searchedActivity = mysystem.searchActivity(Int32.Parse(textBox19.Text));
+                
+                if (searchedActivity == null)
+                {
+                    MessageBox.Show("No existe actividad");
+                }
+                else
+                {
+                    btnActivityDelete1.Show();
+                    btnActivitySearchDelete.Hide();
+                }
+            }
+        }
+
+        private void btnActivityDelete1_Click(object sender, EventArgs e)
+        {
+            if (searchedActivity != null)
+            {
+                mysystem.DeleteActivity(searchedActivity);
+                searchedActivity = null;
+            }
+            else
+            {
+
+            }
+            hideallgrouboxes();
+        }
+
+        private void btnActivitySearchModify_Click(object sender, EventArgs e)
+        {
+            if (textBox19.Text != "")
+            {
+                searchedActivity = mysystem.searchActivity(Int32.Parse(textBox19.Text));
+
+                if (searchedActivity == null)
+                {
+                    MessageBox.Show("No existe actividad");
+                }
+                else
+                {
+                    textBox20.Show();
+                    dateTimePicker1.Show();
+                    textBox17.Show();
+                    btnActivityModify1.Show();
+                    btnActivitySearchModify.Hide();
+                }
+            }
+        }
+
+        private void btnActivityStudents_Click(object sender, EventArgs e)
+        {
+            hideallgrouboxes();
+            ActivityStudentsGroupBox.Visible = true;
+            ActivityStudentsGroupBox.Location = DefaultPanelLocation;
+            refreshdata();
+        }
+
+        private void ActivityListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string myString = ActivityListBox.SelectedItem.ToString();
+            string[] subStrings = myString.Split(' ');
+            searchedActivity = mysystem.searchActivity(Int32.Parse(subStrings[1]));
+            ActivityStudentsListBox.Items.Clear();
+            foreach (Student element in searchedActivity.GetStudents())
+            {
+                ActivityStudentsListBox.Items.Add(element.ToString());
+            }
         }
     }
 }

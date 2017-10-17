@@ -12,6 +12,7 @@ namespace Dominio
         private List<Student> allstudents;
         private List<Subject> allsubjects;
         private List<Van> allvans;
+        private List<Activity> allactivities;
 
         public ERPsystem()
         {
@@ -19,6 +20,7 @@ namespace Dominio
             allsubjects = new List<Subject>();
             allstudents = new List<Student>();
             allvans = new List<Van>();
+            allactivities = new List<Activity>(); 
         }
         public List<Teacher> showallteachers()
         {
@@ -45,6 +47,11 @@ namespace Dominio
             Availables = Availables.OrderByDescending(o => o.GetCapacity()).ToList();
             return Availables;
         }
+        public List<Activity> showallactivities()
+        {
+            return allactivities;
+        }
+
         public Student searchStudent(int Number)
         {
             Student found = null;
@@ -123,6 +130,13 @@ namespace Dominio
                 allvans.Remove(VanToDelete);
             }
         }
+        public void DeleteActivity(Activity ActivityToDelete)
+        {
+            if (allactivities.Contains(ActivityToDelete))
+            {
+                allactivities.Remove(ActivityToDelete);
+            }
+        }
         public float distance(Student student)
         {
             return student.GetX() + student.GetY();
@@ -149,6 +163,17 @@ namespace Dominio
             foreach (Van element in allvans)
                 allroadmaps.Add(routeVan(element));
             return allroadmaps;
+        }
+
+        public Activity searchActivity(int id)
+        {
+            Activity found = null;
+            foreach (Activity element in allactivities)
+            {
+                if (element.GetId().Equals(id))
+                    found = element;
+            }
+            return found;
         }
     }
 }
