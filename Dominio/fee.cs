@@ -10,10 +10,13 @@ namespace Dominio
     {
         private int month;
         private int year;
+        public fee()
+        {
 
+        }
         public override void pay()
         {
-            throw new NotImplementedException();
+            paid=true;
         }
     }
 }

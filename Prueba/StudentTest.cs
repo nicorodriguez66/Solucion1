@@ -74,6 +74,22 @@ namespace Prueba
             string NewString = NewName + " " + NewSurname + " " + NewNumber;
             Assert.AreEqual(NewString, student.ToString());
         }
-        
+
+
+
+        [TestMethod]
+        public void StudentSubjectsTest()
+        {
+            Student student = new Student();
+            Assert.AreEqual(student.GetSubjects().Count,0);
+        }
+
+        [TestMethod]
+        public void StudentPaymentTest()
+        {
+            Student student = new Student();
+            Assert.AreEqual(student.GetPayments().Count, 0);
+        }
+
     }
 }

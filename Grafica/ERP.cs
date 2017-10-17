@@ -67,6 +67,12 @@ namespace Solucion1
             btnActivitySearchModify.Hide();
             btnActivityModify1.Hide();
             ActivityStudentsGroupBox.Hide();
+            PaymentCreateGroupBox.Hide();
+            btnPaymentSearchDelete.Hide();
+            btnPaymentSearchModify.Hide();
+            btnDeletePayment1.Hide();
+            btnModifyPayment1.Hide();
+            btnCreateNewPayment.Hide();
         }
 
         public void refreshdata()
@@ -110,6 +116,8 @@ namespace Solucion1
             {
                 ActivityListBox.Items.Add(element.ToString());
             }
+            for(int i=1;i<=12;i++)
+                comboBox1.Items.Add(i.ToString());
     
     }
 
@@ -905,6 +913,68 @@ namespace Solucion1
             {
                 ActivityStudentsListBox.Items.Add(element.ToString());
             }
+        }
+
+        private void btnCreatePayment_Click(object sender, EventArgs e)
+        {
+            hideallgrouboxes();
+            PaymentCreateGroupBox.Visible = true;
+            PaymentCreateGroupBox.Location = DefaultPanelLocation;
+            PaymentCreateGroupBox.Text = "Alta Pago";
+            textBox9.Show();
+            comboBox1.Show();
+            textBox5.Show();
+
+            btnCreateNewPayment.Show();
+        }
+
+        private void btnDeletePayment_Click(object sender, EventArgs e)
+        {
+            hideallgrouboxes();
+            PaymentCreateGroupBox.Visible = true;
+            PaymentCreateGroupBox.Location = DefaultPanelLocation;
+            PaymentCreateGroupBox.Text = "Baja Pago";
+
+            textBox9.Hide();
+            comboBox1.Hide();
+            textBox5.Hide();
+
+            btnPaymentSearchDelete.Show();
+        }
+
+        private void btnModifyPayment_Click(object sender, EventArgs e)
+        {
+            hideallgrouboxes();
+            PaymentCreateGroupBox.Visible = true;
+            PaymentCreateGroupBox.Location = DefaultPanelLocation;
+            PaymentCreateGroupBox.Text = "Modificar Pago";
+
+            textBox9.Hide();
+            comboBox1.Hide();
+            textBox5.Hide();
+
+            btnPaymentSearchModify.Show();
+        }
+
+        private void btnListPayment_Click(object sender, EventArgs e)
+        {
+            hideallgrouboxes();
+            PaymentCreateGroupBox.Visible = true;
+            PaymentCreateGroupBox.Location = DefaultPanelLocation;
+            PaymentCreateGroupBox.Text = "Listar Pago";
+            
+        }
+
+        private void btnModifyPayment1_Click(object sender, EventArgs e)
+        {
+            btnModifyPayment1.Show();
+            btnModifyPayment.Hide();
+        }
+
+        private void btnDeletePayment1_Click(object sender, EventArgs e)
+        {
+            btnDeletePayment1.Show();
+            btnDeletePayment.Hide();
         }
     }
 }

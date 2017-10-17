@@ -61,10 +61,10 @@
             this.btnActivityStudents = new System.Windows.Forms.Button();
             this.btnDeleteActivity = new System.Windows.Forms.Button();
             this.PaymentGroupBox = new System.Windows.Forms.GroupBox();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
+            this.btnCreatePayment = new System.Windows.Forms.Button();
+            this.btnModifyPayment = new System.Windows.Forms.Button();
+            this.btnListPayment = new System.Windows.Forms.Button();
+            this.btnDeletePayment = new System.Windows.Forms.Button();
             this.StudentCreatGroupBox = new System.Windows.Forms.GroupBox();
             this.studentIdCardTxtBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -131,6 +131,11 @@
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.btnVanCreate = new System.Windows.Forms.Button();
             this.ActivityCreateGroupBox = new System.Windows.Forms.GroupBox();
+            this.btnActivityDelete1 = new System.Windows.Forms.Button();
+            this.btnActivitySearchDelete = new System.Windows.Forms.Button();
+            this.btnActivitySearchModify = new System.Windows.Forms.Button();
+            this.btnActivityModify1 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -154,16 +159,23 @@
             this.VanList = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
             this.VanAvailableListBox1 = new System.Windows.Forms.ListBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.btnActivityModify1 = new System.Windows.Forms.Button();
-            this.btnActivitySearchModify = new System.Windows.Forms.Button();
-            this.btnActivitySearchDelete = new System.Windows.Forms.Button();
-            this.btnActivityDelete1 = new System.Windows.Forms.Button();
             this.ActivityStudentsGroupBox = new System.Windows.Forms.GroupBox();
-            this.ActivityStudentsListBox = new System.Windows.Forms.ListBox();
-            this.ActivityListBox = new System.Windows.Forms.ListBox();
-            this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.ActivityListBox = new System.Windows.Forms.ListBox();
+            this.ActivityStudentsListBox = new System.Windows.Forms.ListBox();
+            this.PaymentCreateGroupBox = new System.Windows.Forms.GroupBox();
+            this.btnDeletePayment1 = new System.Windows.Forms.Button();
+            this.btnPaymentSearchModify = new System.Windows.Forms.Button();
+            this.btnPaymentSearchDelete = new System.Windows.Forms.Button();
+            this.btnModifyPayment1 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.btnCreateNewPayment = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.ModulesGroupBox.SuspendLayout();
             this.StudentGroupBox.SuspendLayout();
             this.SubjectGroupBox.SuspendLayout();
@@ -182,6 +194,7 @@
             this.TeacherListGroupBox.SuspendLayout();
             this.VanList.SuspendLayout();
             this.ActivityStudentsGroupBox.SuspendLayout();
+            this.PaymentCreateGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPayments
@@ -526,10 +539,10 @@
             // 
             // PaymentGroupBox
             // 
-            this.PaymentGroupBox.Controls.Add(this.button17);
-            this.PaymentGroupBox.Controls.Add(this.button18);
-            this.PaymentGroupBox.Controls.Add(this.button19);
-            this.PaymentGroupBox.Controls.Add(this.button20);
+            this.PaymentGroupBox.Controls.Add(this.btnCreatePayment);
+            this.PaymentGroupBox.Controls.Add(this.btnModifyPayment);
+            this.PaymentGroupBox.Controls.Add(this.btnListPayment);
+            this.PaymentGroupBox.Controls.Add(this.btnDeletePayment);
             this.PaymentGroupBox.Location = new System.Drawing.Point(191, 276);
             this.PaymentGroupBox.Name = "PaymentGroupBox";
             this.PaymentGroupBox.Size = new System.Drawing.Size(173, 82);
@@ -537,41 +550,45 @@
             this.PaymentGroupBox.TabStop = false;
             this.PaymentGroupBox.Text = "Pagos";
             // 
-            // button17
+            // btnCreatePayment
             // 
-            this.button17.Location = new System.Drawing.Point(6, 19);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(75, 23);
-            this.button17.TabIndex = 12;
-            this.button17.Text = "Alta";
-            this.button17.UseVisualStyleBackColor = true;
+            this.btnCreatePayment.Location = new System.Drawing.Point(6, 19);
+            this.btnCreatePayment.Name = "btnCreatePayment";
+            this.btnCreatePayment.Size = new System.Drawing.Size(75, 23);
+            this.btnCreatePayment.TabIndex = 12;
+            this.btnCreatePayment.Text = "Alta";
+            this.btnCreatePayment.UseVisualStyleBackColor = true;
+            this.btnCreatePayment.Click += new System.EventHandler(this.btnCreatePayment_Click);
             // 
-            // button18
+            // btnModifyPayment
             // 
-            this.button18.Location = new System.Drawing.Point(6, 48);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(75, 23);
-            this.button18.TabIndex = 14;
-            this.button18.Text = "Modificar";
-            this.button18.UseVisualStyleBackColor = true;
+            this.btnModifyPayment.Location = new System.Drawing.Point(6, 48);
+            this.btnModifyPayment.Name = "btnModifyPayment";
+            this.btnModifyPayment.Size = new System.Drawing.Size(75, 23);
+            this.btnModifyPayment.TabIndex = 14;
+            this.btnModifyPayment.Text = "Modificar";
+            this.btnModifyPayment.UseVisualStyleBackColor = true;
+            this.btnModifyPayment.Click += new System.EventHandler(this.btnModifyPayment_Click);
             // 
-            // button19
+            // btnListPayment
             // 
-            this.button19.Location = new System.Drawing.Point(87, 48);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(75, 23);
-            this.button19.TabIndex = 15;
-            this.button19.Text = "Listar";
-            this.button19.UseVisualStyleBackColor = true;
+            this.btnListPayment.Location = new System.Drawing.Point(87, 48);
+            this.btnListPayment.Name = "btnListPayment";
+            this.btnListPayment.Size = new System.Drawing.Size(75, 23);
+            this.btnListPayment.TabIndex = 15;
+            this.btnListPayment.Text = "Listar";
+            this.btnListPayment.UseVisualStyleBackColor = true;
+            this.btnListPayment.Click += new System.EventHandler(this.btnListPayment_Click);
             // 
-            // button20
+            // btnDeletePayment
             // 
-            this.button20.Location = new System.Drawing.Point(87, 19);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(75, 23);
-            this.button20.TabIndex = 13;
-            this.button20.Text = "Baja";
-            this.button20.UseVisualStyleBackColor = true;
+            this.btnDeletePayment.Location = new System.Drawing.Point(87, 19);
+            this.btnDeletePayment.Name = "btnDeletePayment";
+            this.btnDeletePayment.Size = new System.Drawing.Size(75, 23);
+            this.btnDeletePayment.TabIndex = 13;
+            this.btnDeletePayment.Text = "Baja";
+            this.btnDeletePayment.UseVisualStyleBackColor = true;
+            this.btnDeletePayment.Click += new System.EventHandler(this.btnDeletePayment_Click);
             // 
             // StudentCreatGroupBox
             // 
@@ -1220,12 +1237,59 @@
             this.ActivityCreateGroupBox.Controls.Add(this.textBox19);
             this.ActivityCreateGroupBox.Controls.Add(this.textBox20);
             this.ActivityCreateGroupBox.Controls.Add(this.btnCreateNewActivity);
-            this.ActivityCreateGroupBox.Location = new System.Drawing.Point(586, 299);
+            this.ActivityCreateGroupBox.Location = new System.Drawing.Point(581, 295);
             this.ActivityCreateGroupBox.Name = "ActivityCreateGroupBox";
             this.ActivityCreateGroupBox.Size = new System.Drawing.Size(205, 170);
             this.ActivityCreateGroupBox.TabIndex = 27;
             this.ActivityCreateGroupBox.TabStop = false;
             this.ActivityCreateGroupBox.Text = "Alta Actividad";
+            // 
+            // btnActivityDelete1
+            // 
+            this.btnActivityDelete1.Location = new System.Drawing.Point(106, 141);
+            this.btnActivityDelete1.Name = "btnActivityDelete1";
+            this.btnActivityDelete1.Size = new System.Drawing.Size(75, 23);
+            this.btnActivityDelete1.TabIndex = 29;
+            this.btnActivityDelete1.Text = "Borrar";
+            this.btnActivityDelete1.UseVisualStyleBackColor = true;
+            this.btnActivityDelete1.Click += new System.EventHandler(this.btnActivityDelete1_Click);
+            // 
+            // btnActivitySearchDelete
+            // 
+            this.btnActivitySearchDelete.Location = new System.Drawing.Point(64, 141);
+            this.btnActivitySearchDelete.Name = "btnActivitySearchDelete";
+            this.btnActivitySearchDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnActivitySearchDelete.TabIndex = 28;
+            this.btnActivitySearchDelete.Text = "Buscar";
+            this.btnActivitySearchDelete.UseVisualStyleBackColor = true;
+            this.btnActivitySearchDelete.Click += new System.EventHandler(this.btnActivitySearchDelete_Click);
+            // 
+            // btnActivitySearchModify
+            // 
+            this.btnActivitySearchModify.Location = new System.Drawing.Point(65, 141);
+            this.btnActivitySearchModify.Name = "btnActivitySearchModify";
+            this.btnActivitySearchModify.Size = new System.Drawing.Size(75, 23);
+            this.btnActivitySearchModify.TabIndex = 27;
+            this.btnActivitySearchModify.Text = "Buscar";
+            this.btnActivitySearchModify.UseVisualStyleBackColor = true;
+            this.btnActivitySearchModify.Click += new System.EventHandler(this.btnActivitySearchModify_Click);
+            // 
+            // btnActivityModify1
+            // 
+            this.btnActivityModify1.Location = new System.Drawing.Point(106, 142);
+            this.btnActivityModify1.Name = "btnActivityModify1";
+            this.btnActivityModify1.Size = new System.Drawing.Size(75, 23);
+            this.btnActivityModify1.TabIndex = 26;
+            this.btnActivityModify1.Text = "Modificar";
+            this.btnActivityModify1.UseVisualStyleBackColor = true;
+            this.btnActivityModify1.Click += new System.EventHandler(this.btnActivityModify1_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(65, 85);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(129, 20);
+            this.dateTimePicker1.TabIndex = 25;
             // 
             // textBox17
             // 
@@ -1437,53 +1501,6 @@
             this.VanAvailableListBox1.Size = new System.Drawing.Size(132, 121);
             this.VanAvailableListBox1.TabIndex = 0;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(65, 85);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(129, 20);
-            this.dateTimePicker1.TabIndex = 25;
-            // 
-            // btnActivityModify1
-            // 
-            this.btnActivityModify1.Location = new System.Drawing.Point(106, 142);
-            this.btnActivityModify1.Name = "btnActivityModify1";
-            this.btnActivityModify1.Size = new System.Drawing.Size(75, 23);
-            this.btnActivityModify1.TabIndex = 26;
-            this.btnActivityModify1.Text = "Modificar";
-            this.btnActivityModify1.UseVisualStyleBackColor = true;
-            this.btnActivityModify1.Click += new System.EventHandler(this.btnActivityModify1_Click);
-            // 
-            // btnActivitySearchModify
-            // 
-            this.btnActivitySearchModify.Location = new System.Drawing.Point(65, 141);
-            this.btnActivitySearchModify.Name = "btnActivitySearchModify";
-            this.btnActivitySearchModify.Size = new System.Drawing.Size(75, 23);
-            this.btnActivitySearchModify.TabIndex = 27;
-            this.btnActivitySearchModify.Text = "Buscar";
-            this.btnActivitySearchModify.UseVisualStyleBackColor = true;
-            this.btnActivitySearchModify.Click += new System.EventHandler(this.btnActivitySearchModify_Click);
-            // 
-            // btnActivitySearchDelete
-            // 
-            this.btnActivitySearchDelete.Location = new System.Drawing.Point(64, 141);
-            this.btnActivitySearchDelete.Name = "btnActivitySearchDelete";
-            this.btnActivitySearchDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnActivitySearchDelete.TabIndex = 28;
-            this.btnActivitySearchDelete.Text = "Buscar";
-            this.btnActivitySearchDelete.UseVisualStyleBackColor = true;
-            this.btnActivitySearchDelete.Click += new System.EventHandler(this.btnActivitySearchDelete_Click);
-            // 
-            // btnActivityDelete1
-            // 
-            this.btnActivityDelete1.Location = new System.Drawing.Point(106, 141);
-            this.btnActivityDelete1.Name = "btnActivityDelete1";
-            this.btnActivityDelete1.Size = new System.Drawing.Size(75, 23);
-            this.btnActivityDelete1.TabIndex = 29;
-            this.btnActivityDelete1.Text = "Borrar";
-            this.btnActivityDelete1.UseVisualStyleBackColor = true;
-            this.btnActivityDelete1.Click += new System.EventHandler(this.btnActivityDelete1_Click);
-            // 
             // ActivityStudentsGroupBox
             // 
             this.ActivityStudentsGroupBox.Controls.Add(this.label28);
@@ -1497,22 +1514,14 @@
             this.ActivityStudentsGroupBox.TabStop = false;
             this.ActivityStudentsGroupBox.Text = "Participantes";
             // 
-            // ActivityStudentsListBox
+            // label28
             // 
-            this.ActivityStudentsListBox.FormattingEnabled = true;
-            this.ActivityStudentsListBox.Location = new System.Drawing.Point(78, 29);
-            this.ActivityStudentsListBox.Name = "ActivityStudentsListBox";
-            this.ActivityStudentsListBox.Size = new System.Drawing.Size(65, 121);
-            this.ActivityStudentsListBox.TabIndex = 0;
-            // 
-            // ActivityListBox
-            // 
-            this.ActivityListBox.FormattingEnabled = true;
-            this.ActivityListBox.Location = new System.Drawing.Point(7, 29);
-            this.ActivityListBox.Name = "ActivityListBox";
-            this.ActivityListBox.Size = new System.Drawing.Size(65, 121);
-            this.ActivityListBox.TabIndex = 1;
-            this.ActivityListBox.SelectedIndexChanged += new System.EventHandler(this.ActivityListBox_SelectedIndexChanged);
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(6, 16);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(51, 13);
+            this.label28.TabIndex = 21;
+            this.label28.Text = "Actividad";
             // 
             // label27
             // 
@@ -1523,20 +1532,145 @@
             this.label27.TabIndex = 20;
             this.label27.Text = "Alumnos";
             // 
-            // label28
+            // ActivityListBox
             // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(6, 16);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(51, 13);
-            this.label28.TabIndex = 21;
-            this.label28.Text = "Actividad";
+            this.ActivityListBox.FormattingEnabled = true;
+            this.ActivityListBox.Location = new System.Drawing.Point(7, 29);
+            this.ActivityListBox.Name = "ActivityListBox";
+            this.ActivityListBox.Size = new System.Drawing.Size(65, 121);
+            this.ActivityListBox.TabIndex = 1;
+            this.ActivityListBox.SelectedIndexChanged += new System.EventHandler(this.ActivityListBox_SelectedIndexChanged);
+            // 
+            // ActivityStudentsListBox
+            // 
+            this.ActivityStudentsListBox.FormattingEnabled = true;
+            this.ActivityStudentsListBox.Location = new System.Drawing.Point(78, 29);
+            this.ActivityStudentsListBox.Name = "ActivityStudentsListBox";
+            this.ActivityStudentsListBox.Size = new System.Drawing.Size(65, 121);
+            this.ActivityStudentsListBox.TabIndex = 0;
+            // 
+            // PaymentCreateGroupBox
+            // 
+            this.PaymentCreateGroupBox.Controls.Add(this.comboBox1);
+            this.PaymentCreateGroupBox.Controls.Add(this.btnDeletePayment1);
+            this.PaymentCreateGroupBox.Controls.Add(this.btnPaymentSearchModify);
+            this.PaymentCreateGroupBox.Controls.Add(this.btnPaymentSearchDelete);
+            this.PaymentCreateGroupBox.Controls.Add(this.btnModifyPayment1);
+            this.PaymentCreateGroupBox.Controls.Add(this.textBox5);
+            this.PaymentCreateGroupBox.Controls.Add(this.label29);
+            this.PaymentCreateGroupBox.Controls.Add(this.label31);
+            this.PaymentCreateGroupBox.Controls.Add(this.label32);
+            this.PaymentCreateGroupBox.Controls.Add(this.textBox9);
+            this.PaymentCreateGroupBox.Controls.Add(this.btnCreateNewPayment);
+            this.PaymentCreateGroupBox.Location = new System.Drawing.Point(540, 409);
+            this.PaymentCreateGroupBox.Name = "PaymentCreateGroupBox";
+            this.PaymentCreateGroupBox.Size = new System.Drawing.Size(205, 170);
+            this.PaymentCreateGroupBox.TabIndex = 32;
+            this.PaymentCreateGroupBox.TabStop = false;
+            this.PaymentCreateGroupBox.Text = "Alta Pago";
+            // 
+            // btnDeletePayment1
+            // 
+            this.btnDeletePayment1.Location = new System.Drawing.Point(105, 116);
+            this.btnDeletePayment1.Name = "btnDeletePayment1";
+            this.btnDeletePayment1.Size = new System.Drawing.Size(75, 23);
+            this.btnDeletePayment1.TabIndex = 29;
+            this.btnDeletePayment1.Text = "Borrar";
+            this.btnDeletePayment1.UseVisualStyleBackColor = true;
+            this.btnDeletePayment1.Click += new System.EventHandler(this.btnDeletePayment1_Click);
+            // 
+            // btnPaymentSearchModify
+            // 
+            this.btnPaymentSearchModify.Location = new System.Drawing.Point(65, 116);
+            this.btnPaymentSearchModify.Name = "btnPaymentSearchModify";
+            this.btnPaymentSearchModify.Size = new System.Drawing.Size(75, 23);
+            this.btnPaymentSearchModify.TabIndex = 28;
+            this.btnPaymentSearchModify.Text = "Buscar";
+            this.btnPaymentSearchModify.UseVisualStyleBackColor = true;
+            // 
+            // btnPaymentSearchDelete
+            // 
+            this.btnPaymentSearchDelete.Location = new System.Drawing.Point(65, 101);
+            this.btnPaymentSearchDelete.Name = "btnPaymentSearchDelete";
+            this.btnPaymentSearchDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnPaymentSearchDelete.TabIndex = 27;
+            this.btnPaymentSearchDelete.Text = "Buscar";
+            this.btnPaymentSearchDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnModifyPayment1
+            // 
+            this.btnModifyPayment1.Location = new System.Drawing.Point(105, 101);
+            this.btnModifyPayment1.Name = "btnModifyPayment1";
+            this.btnModifyPayment1.Size = new System.Drawing.Size(75, 23);
+            this.btnModifyPayment1.TabIndex = 26;
+            this.btnModifyPayment1.Text = "Modificar";
+            this.btnModifyPayment1.UseVisualStyleBackColor = true;
+            this.btnModifyPayment1.Click += new System.EventHandler(this.btnModifyPayment1_Click);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(64, 88);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(130, 20);
+            this.textBox5.TabIndex = 23;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(6, 91);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(28, 13);
+            this.label29.TabIndex = 22;
+            this.label29.Text = "Cost";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(6, 62);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(37, 13);
+            this.label31.TabIndex = 20;
+            this.label31.Text = "Month";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(6, 36);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(29, 13);
+            this.label32.TabIndex = 19;
+            this.label32.Text = "Year";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(64, 33);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(130, 20);
+            this.textBox9.TabIndex = 16;
+            // 
+            // btnCreateNewPayment
+            // 
+            this.btnCreateNewPayment.Location = new System.Drawing.Point(64, 141);
+            this.btnCreateNewPayment.Name = "btnCreateNewPayment";
+            this.btnCreateNewPayment.Size = new System.Drawing.Size(75, 23);
+            this.btnCreateNewPayment.TabIndex = 24;
+            this.btnCreateNewPayment.Text = "Crear";
+            this.btnCreateNewPayment.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(64, 59);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(130, 21);
+            this.comboBox1.TabIndex = 30;
             // 
             // ERP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1096, 525);
+            this.ClientSize = new System.Drawing.Size(1096, 576);
+            this.Controls.Add(this.PaymentCreateGroupBox);
             this.Controls.Add(this.TeacherCreateGroupBox);
             this.Controls.Add(this.SubjectCreateGroupBox);
             this.Controls.Add(this.ActivityStudentsGroupBox);
@@ -1587,6 +1721,8 @@
             this.VanList.PerformLayout();
             this.ActivityStudentsGroupBox.ResumeLayout(false);
             this.ActivityStudentsGroupBox.PerformLayout();
+            this.PaymentCreateGroupBox.ResumeLayout(false);
+            this.PaymentCreateGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1622,10 +1758,10 @@
         private System.Windows.Forms.Button btnTeacherDelete;
         private System.Windows.Forms.GroupBox ActivityGroupBox;
         private System.Windows.Forms.GroupBox PaymentGroupBox;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button btnCreatePayment;
+        private System.Windows.Forms.Button btnModifyPayment;
+        private System.Windows.Forms.Button btnListPayment;
+        private System.Windows.Forms.Button btnDeletePayment;
         private System.Windows.Forms.Button btnCreateActivity;
         private System.Windows.Forms.Button btnModifyActivity;
         private System.Windows.Forms.Button btnActivityStudents;
@@ -1729,5 +1865,17 @@
         private System.Windows.Forms.ListBox ActivityListBox;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.GroupBox PaymentCreateGroupBox;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnDeletePayment1;
+        private System.Windows.Forms.Button btnPaymentSearchModify;
+        private System.Windows.Forms.Button btnPaymentSearchDelete;
+        private System.Windows.Forms.Button btnModifyPayment1;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Button btnCreateNewPayment;
     }
 }

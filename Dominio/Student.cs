@@ -13,6 +13,7 @@ namespace Dominio
         private int idcard { set; get; }
         private float x { set; get; }
         private float y { set; get; }
+        private List<payment> payments;
         
         public Student()
         {
@@ -23,11 +24,23 @@ namespace Dominio
             x = 0;
             y = 0;
             subjects = new List<Subject>();
+            payments = new List<payment>();
         }
         public List<Subject> GetSubjects()
         {
             return subjects;
         }
+
+
+        public List<payment> GetPayments()
+        {
+            return payments;
+        }
+
+
+
+        
+
         public string GetName()
         {
             return name;

@@ -22,6 +22,7 @@ namespace Dominio
             date = System.DateTime.Now;
             cost = 0;
             students = new List<Student>();
+            paid = false;
         }
 
         public void EditActivityName(string NewName)
@@ -58,7 +59,7 @@ namespace Dominio
         }
         public override void pay()
         {
-            throw new NotImplementedException();
+            paid = true;
         }
     }
 }
