@@ -121,7 +121,7 @@ namespace Solucion1
     
     }
 
-    private void BtnStudents_Click(object sender, EventArgs e)
+        private void BtnStudents_Click(object sender, EventArgs e)
         {
             hideallgrouboxes();
             StudentGroupBox.Visible = true;
@@ -452,44 +452,7 @@ namespace Solucion1
 
         private void btnLoadData_Click(object sender, EventArgs e)
         {
-            mysystem = new ERPsystem();
-            Student s1 = new Student(); s1.EditStudentName("s1"); s1.EditStudentSurname("s1"); s1.EditStudentNumber(1); s1.EditStudentidCard(1);
-            Student s2 = new Student(); s2.EditStudentName("s2"); s2.EditStudentSurname("s2"); s2.EditStudentNumber(2); s2.EditStudentidCard(2);
-            Student s3 = new Student(); s3.EditStudentName("s3"); s3.EditStudentSurname("s3"); s3.EditStudentNumber(3); s3.EditStudentidCard(3);
-            Student s4 = new Student(); s4.EditStudentName("s4"); s4.EditStudentSurname("s4"); s4.EditStudentNumber(4); s4.EditStudentidCard(4);
-            mysystem.showallstudents().Add(s1);
-            mysystem.showallstudents().Add(s2);
-            mysystem.showallstudents().Add(s3);
-            mysystem.showallstudents().Add(s4);
-            Teacher t1 = new Teacher(); t1.EditTeacherName("T1"); t1.EditTeacherSurname("T1");
-            Teacher t2 = new Teacher(); t2.EditTeacherName("T2"); t2.EditTeacherSurname("T2");
-            Teacher t3 = new Teacher(); t3.EditTeacherName("T3"); t3.EditTeacherSurname("T3");
-            Teacher t4 = new Teacher(); t4.EditTeacherName("T4"); t4.EditTeacherSurname("T4");
-            mysystem.showallteachers().Add(t1);
-            mysystem.showallteachers().Add(t2);
-            mysystem.showallteachers().Add(t3);
-            mysystem.showallteachers().Add(t4);
-            Subject sub1 = new Subject(); sub1.EditSubjectCode("sub1"); sub1.EditSubjectName("subject1"); sub1.SubjectAddStudent(s1); s1.GetSubjects().Add(sub1); sub1.SubjectAddTeacher(t1); t1.GetSubjects().Add(sub1);
-            Subject sub2 = new Subject(); sub2.EditSubjectCode("sub2"); sub2.EditSubjectName("subject2"); sub2.SubjectAddStudent(s2); s2.GetSubjects().Add(sub2); sub2.SubjectAddTeacher(t2); t2.GetSubjects().Add(sub2);
-            Subject sub3 = new Subject(); sub3.EditSubjectCode("sub3"); sub3.EditSubjectName("subject3"); sub3.SubjectAddStudent(s3); s3.GetSubjects().Add(sub3); sub3.SubjectAddTeacher(t3); t3.GetSubjects().Add(sub3);
-            mysystem.showallsubjects().Add(sub1);
-            mysystem.showallsubjects().Add(sub2);
-            mysystem.showallsubjects().Add(sub3);
-            Activity a1 = new Activity(); a1.EditActivityCost(1); a1.EditActivityDate(System.DateTime.Now); a1.EditActivityId(1); a1.EditActivityName("1");
-            Activity a2 = new Activity(); a2.EditActivityCost(2); a2.EditActivityDate(System.DateTime.Now); a2.EditActivityId(2); a2.EditActivityName("2");
-            Activity a3 = new Activity(); a3.EditActivityCost(3); a3.EditActivityDate(System.DateTime.Now); a3.EditActivityId(3); a3.EditActivityName("3");
-            a1.GetStudents().Add(s1);
-            a2.GetStudents().Add(s2);
-            a3.GetStudents().Add(s3);
-            mysystem.showallactivities().Add(a1);
-            mysystem.showallactivities().Add(a2);
-            mysystem.showallactivities().Add(a3);
-            Van v1 = new Van(); v1.EditVanAvailability(true); v1.EditVanCapacity(1); v1.EditVanId(1); v1.EditVanName("1");
-            Van v2 = new Van(); v2.EditVanAvailability(true); v2.EditVanCapacity(2); v2.EditVanId(2); v2.EditVanName("2");
-            Van v3 = new Van(); v3.EditVanAvailability(true); v3.EditVanCapacity(3); v3.EditVanId(3); v3.EditVanName("3");
-            mysystem.showallvans().Add(v1);
-            mysystem.showallvans().Add(v2);
-            mysystem.showallvans().Add(v3);
+            mysystem = mysystem.LoadData();
             hideallgrouboxes();
             refreshdata();
 
