@@ -1,0 +1,10 @@
+C:\DA1\Obligatorio1\Solucion1\Grafica\bin\Release\Solucion1.exe
+C:\DA1\Obligatorio1\Solucion1\Grafica\bin\Release\Solucion1.pdb
+C:\DA1\Obligatorio1\Solucion1\Grafica\bin\Release\Dominio.dll
+C:\DA1\Obligatorio1\Solucion1\Grafica\bin\Release\Dominio.pdb
+C:\DA1\Obligatorio1\Solucion1\Grafica\obj\Release\Grafica.csprojResolveAssemblyReference.cache
+C:\DA1\Obligatorio1\Solucion1\Grafica\obj\Release\Solucion1.ERP.resources
+C:\DA1\Obligatorio1\Solucion1\Grafica\obj\Release\Solucion1.Resources.resources
+C:\DA1\Obligatorio1\Solucion1\Grafica\obj\Release\Grafica.csproj.GenerateResource.Cache
+C:\DA1\Obligatorio1\Solucion1\Grafica\obj\Release\Solucion1.exe
+C:\DA1\Obligatorio1\Solucion1\Grafica\obj\Release\Solucion1.pdb

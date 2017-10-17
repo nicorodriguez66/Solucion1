@@ -1,0 +1,5 @@
+C:\DA1\Obligatorio1\Solucion1\Dominio\bin\Release\Dominio.dll
+C:\DA1\Obligatorio1\Solucion1\Dominio\bin\Release\Dominio.pdb
+C:\DA1\Obligatorio1\Solucion1\Dominio\obj\Release\Dominio.csprojResolveAssemblyReference.cache
+C:\DA1\Obligatorio1\Solucion1\Dominio\obj\Release\Dominio.dll
+C:\DA1\Obligatorio1\Solucion1\Dominio\obj\Release\Dominio.pdb

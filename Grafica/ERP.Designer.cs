@@ -46,7 +46,7 @@
             this.btnSubjectList = new System.Windows.Forms.Button();
             this.btnSubjectDelete = new System.Windows.Forms.Button();
             this.TeacherGroupBox = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnTeacherCreate = new System.Windows.Forms.Button();
             this.btnTeacherModify = new System.Windows.Forms.Button();
             this.btnTeacherList = new System.Windows.Forms.Button();
             this.btnTeacherDelete = new System.Windows.Forms.Button();
@@ -102,7 +102,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.btnCreateTeacher = new System.Windows.Forms.Button();
+            this.btnCreateNewTeacher = new System.Windows.Forms.Button();
             this.SubjectCreateGroupBox = new System.Windows.Forms.GroupBox();
             this.btnSubjectSearchModify1 = new System.Windows.Forms.Button();
             this.btnSubjectSearchModify = new System.Windows.Forms.Button();
@@ -157,6 +157,7 @@
             this.TeacherListBox = new System.Windows.Forms.ListBox();
             this.btnLoadData = new System.Windows.Forms.Button();
             this.VanList = new System.Windows.Forms.GroupBox();
+            this.roadmapListBox = new System.Windows.Forms.ListBox();
             this.label19 = new System.Windows.Forms.Label();
             this.VanAvailableListBox1 = new System.Windows.Forms.ListBox();
             this.ActivityStudentsGroupBox = new System.Windows.Forms.GroupBox();
@@ -165,6 +166,7 @@
             this.ActivityListBox = new System.Windows.Forms.ListBox();
             this.ActivityStudentsListBox = new System.Windows.Forms.ListBox();
             this.PaymentCreateGroupBox = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnDeletePayment1 = new System.Windows.Forms.Button();
             this.btnPaymentSearchModify = new System.Windows.Forms.Button();
             this.btnPaymentSearchDelete = new System.Windows.Forms.Button();
@@ -175,8 +177,6 @@
             this.label32 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.btnCreateNewPayment = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.roadmapListBox = new System.Windows.Forms.ListBox();
             this.ModulesGroupBox.SuspendLayout();
             this.StudentGroupBox.SuspendLayout();
             this.SubjectGroupBox.SuspendLayout();
@@ -381,7 +381,7 @@
             // 
             // TeacherGroupBox
             // 
-            this.TeacherGroupBox.Controls.Add(this.button5);
+            this.TeacherGroupBox.Controls.Add(this.btnTeacherCreate);
             this.TeacherGroupBox.Controls.Add(this.btnTeacherModify);
             this.TeacherGroupBox.Controls.Add(this.btnTeacherList);
             this.TeacherGroupBox.Controls.Add(this.btnTeacherDelete);
@@ -392,15 +392,15 @@
             this.TeacherGroupBox.TabStop = false;
             this.TeacherGroupBox.Text = "Docentes";
             // 
-            // button5
+            // btnTeacherCreate
             // 
-            this.button5.Location = new System.Drawing.Point(6, 19);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "Alta";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnTeacherCreate.Location = new System.Drawing.Point(6, 19);
+            this.btnTeacherCreate.Name = "btnTeacherCreate";
+            this.btnTeacherCreate.Size = new System.Drawing.Size(75, 23);
+            this.btnTeacherCreate.TabIndex = 12;
+            this.btnTeacherCreate.Text = "Alta";
+            this.btnTeacherCreate.UseVisualStyleBackColor = true;
+            this.btnTeacherCreate.Click += new System.EventHandler(this.btnTeacherCreate_Click);
             // 
             // btnTeacherModify
             // 
@@ -848,7 +848,7 @@
             this.TeacherCreateGroupBox.Controls.Add(this.label12);
             this.TeacherCreateGroupBox.Controls.Add(this.textBox7);
             this.TeacherCreateGroupBox.Controls.Add(this.textBox8);
-            this.TeacherCreateGroupBox.Controls.Add(this.btnCreateTeacher);
+            this.TeacherCreateGroupBox.Controls.Add(this.btnCreateNewTeacher);
             this.TeacherCreateGroupBox.Location = new System.Drawing.Point(581, 12);
             this.TeacherCreateGroupBox.Name = "TeacherCreateGroupBox";
             this.TeacherCreateGroupBox.Size = new System.Drawing.Size(205, 170);
@@ -945,15 +945,15 @@
             this.textBox8.Size = new System.Drawing.Size(130, 20);
             this.textBox8.TabIndex = 16;
             // 
-            // btnCreateTeacher
+            // btnCreateNewTeacher
             // 
-            this.btnCreateTeacher.Location = new System.Drawing.Point(64, 141);
-            this.btnCreateTeacher.Name = "btnCreateTeacher";
-            this.btnCreateTeacher.Size = new System.Drawing.Size(75, 23);
-            this.btnCreateTeacher.TabIndex = 24;
-            this.btnCreateTeacher.Text = "Crear";
-            this.btnCreateTeacher.UseVisualStyleBackColor = true;
-            this.btnCreateTeacher.Click += new System.EventHandler(this.btnCreateTeacher_Click);
+            this.btnCreateNewTeacher.Location = new System.Drawing.Point(64, 141);
+            this.btnCreateNewTeacher.Name = "btnCreateNewTeacher";
+            this.btnCreateNewTeacher.Size = new System.Drawing.Size(75, 23);
+            this.btnCreateNewTeacher.TabIndex = 24;
+            this.btnCreateNewTeacher.Text = "Crear";
+            this.btnCreateNewTeacher.UseVisualStyleBackColor = true;
+            this.btnCreateNewTeacher.Click += new System.EventHandler(this.btnCreateNewTeacher_Click);
             // 
             // SubjectCreateGroupBox
             // 
@@ -1257,7 +1257,7 @@
             // 
             // btnActivitySearchDelete
             // 
-            this.btnActivitySearchDelete.Location = new System.Drawing.Point(64, 141);
+            this.btnActivitySearchDelete.Location = new System.Drawing.Point(65, 118);
             this.btnActivitySearchDelete.Name = "btnActivitySearchDelete";
             this.btnActivitySearchDelete.Size = new System.Drawing.Size(75, 23);
             this.btnActivitySearchDelete.TabIndex = 28;
@@ -1267,7 +1267,7 @@
             // 
             // btnActivitySearchModify
             // 
-            this.btnActivitySearchModify.Location = new System.Drawing.Point(65, 141);
+            this.btnActivitySearchModify.Location = new System.Drawing.Point(64, 118);
             this.btnActivitySearchModify.Name = "btnActivitySearchModify";
             this.btnActivitySearchModify.Size = new System.Drawing.Size(75, 23);
             this.btnActivitySearchModify.TabIndex = 27;
@@ -1486,6 +1486,14 @@
             this.VanList.TabStop = false;
             this.VanList.Text = "Listar Camionetas";
             // 
+            // roadmapListBox
+            // 
+            this.roadmapListBox.FormattingEnabled = true;
+            this.roadmapListBox.Location = new System.Drawing.Point(89, 30);
+            this.roadmapListBox.Name = "roadmapListBox";
+            this.roadmapListBox.Size = new System.Drawing.Size(61, 121);
+            this.roadmapListBox.TabIndex = 6;
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -1571,6 +1579,14 @@
             this.PaymentCreateGroupBox.TabIndex = 32;
             this.PaymentCreateGroupBox.TabStop = false;
             this.PaymentCreateGroupBox.Text = "Alta Pago";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(64, 59);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(130, 21);
+            this.comboBox1.TabIndex = 30;
             // 
             // btnDeletePayment1
             // 
@@ -1660,32 +1676,16 @@
             this.btnCreateNewPayment.Text = "Crear";
             this.btnCreateNewPayment.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(64, 59);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(130, 21);
-            this.comboBox1.TabIndex = 30;
-            // 
-            // roadmapListBox
-            // 
-            this.roadmapListBox.FormattingEnabled = true;
-            this.roadmapListBox.Location = new System.Drawing.Point(89, 30);
-            this.roadmapListBox.Name = "roadmapListBox";
-            this.roadmapListBox.Size = new System.Drawing.Size(61, 121);
-            this.roadmapListBox.TabIndex = 6;
-            // 
             // ERP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 355);
+            this.ClientSize = new System.Drawing.Size(660, 360);
+            this.Controls.Add(this.ActivityCreateGroupBox);
             this.Controls.Add(this.PaymentCreateGroupBox);
             this.Controls.Add(this.TeacherCreateGroupBox);
             this.Controls.Add(this.SubjectCreateGroupBox);
             this.Controls.Add(this.ActivityStudentsGroupBox);
-            this.Controls.Add(this.ActivityCreateGroupBox);
             this.Controls.Add(this.StudentListGroupBox);
             this.Controls.Add(this.VanCreateGroupBox);
             this.Controls.Add(this.VanList);
@@ -1763,7 +1763,7 @@
         private System.Windows.Forms.Button btnVanUpdate;
         private System.Windows.Forms.Button btnAvailableVans;
         private System.Windows.Forms.Button btnVanDelete;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnTeacherCreate;
         private System.Windows.Forms.Button btnTeacherModify;
         private System.Windows.Forms.Button btnTeacherList;
         private System.Windows.Forms.Button btnTeacherDelete;
@@ -1805,7 +1805,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Button btnCreateTeacher;
+        private System.Windows.Forms.Button btnCreateNewTeacher;
         private System.Windows.Forms.GroupBox SubjectCreateGroupBox;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;

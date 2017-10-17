@@ -50,7 +50,7 @@ namespace Solucion1
             btnSubjectSearchModify1.Hide();
             btnDeleteSubject.Hide();
             button29.Hide();
-            btnCreateTeacher.Hide();
+            btnCreateNewTeacher.Hide();
             btnTeacherDelete1.Hide();
             btnTeacherModify1.Hide();
             textBox8.Hide();
@@ -73,6 +73,11 @@ namespace Solucion1
             btnDeletePayment1.Hide();
             btnModifyPayment1.Hide();
             btnCreateNewPayment.Hide();
+            btnTeacherSearchModify.Hide();
+            btnTeacherSearchDelete.Hide();
+            btnCreateNewTeacher.Hide();
+            btnCreateNewActivity.Hide();
+
         }
 
         public void refreshdata()
@@ -116,7 +121,8 @@ namespace Solucion1
             {
                 ActivityListBox.Items.Add(element.ToString());
             }
-            for(int i=1;i<=12;i++)
+            comboBox1.Items.Clear();
+            for (int i=1;i<=12;i++)
                 comboBox1.Items.Add(i.ToString());
     
     }
@@ -206,12 +212,7 @@ namespace Solucion1
             PaymentGroupBox.Location = DefaultPanelLocation;
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            hideallgrouboxes();
-            TeacherCreateGroupBox.Visible = true;
-            TeacherCreateGroupBox.Location = DefaultPanelLocation;
-        }
+        
 
         private void button9_Click(object sender, EventArgs e)
         {
@@ -433,14 +434,7 @@ namespace Solucion1
             hideallgrouboxes();
         }
 
-        private void btnCreateTeacher_Click(object sender, EventArgs e)
-        {
-            Teacher createdTeacher = new Teacher();
-            createdTeacher.EditTeacherName(textBox8.Text); textBox8.Text = "";
-            createdTeacher.EditTeacherSurname(textBox7.Text); textBox7.Text = "";
-            mysystem.showallteachers().Add(createdTeacher);
-            hideallgrouboxes();
-        }
+        
 
         private void btnTeacherList_Click(object sender, EventArgs e)
         {
@@ -746,6 +740,12 @@ namespace Solucion1
             hideallgrouboxes();
             ActivityCreateGroupBox.Visible = true;
             ActivityCreateGroupBox.Location = DefaultPanelLocation;
+            ActivityCreateGroupBox.Text = "Alta Actividad";
+            textBox20.Show();
+            textBox19.Show();
+            dateTimePicker1.Show();
+            textBox17.Show();
+            btnCreateNewActivity.Show();
         }
 
         private void btnCreateNewActivity_Click(object sender, EventArgs e)
@@ -925,6 +925,7 @@ namespace Solucion1
             PaymentCreateGroupBox.Visible = true;
             PaymentCreateGroupBox.Location = DefaultPanelLocation;
             PaymentCreateGroupBox.Text = "Listar Pago";
+            refreshdata();
             
         }
 
@@ -950,6 +951,27 @@ namespace Solucion1
             {
                 roadmapListBox.Items.Add(element.ToString());
             }
+        }
+
+        private void btnTeacherCreate_Click(object sender, EventArgs e)
+        {
+            hideallgrouboxes();
+            TeacherCreateGroupBox.Visible = true;
+            TeacherCreateGroupBox.Location = DefaultPanelLocation;
+            TeacherCreateGroupBox.Text = "Alta Docente";
+            textBox8.Show();
+            textBox7.Show();
+            TeacherSubjectsListBox.Show();
+            btnCreateNewTeacher.Show();
+        }
+
+        private void btnCreateNewTeacher_Click(object sender, EventArgs e)
+        {
+            Teacher createdTeacher = new Teacher();
+            createdTeacher.EditTeacherName(textBox8.Text); textBox8.Text = "";
+            createdTeacher.EditTeacherSurname(textBox7.Text); textBox7.Text = "";
+            mysystem.showallteachers().Add(createdTeacher);
+            hideallgrouboxes();
         }
     }
 }
